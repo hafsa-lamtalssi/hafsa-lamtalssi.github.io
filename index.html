@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hafsa Lamtalssi — Développeuse Web à Bruxelles</title>
+<meta name="description" content="Portfolio de Hafsa Lamtalssi, développeuse web junior à Bruxelles : React, TypeScript, PHP, Node.js — avec un œil de graphiste.">
+<link rel="canonical" href="https://hafsalamtalssi294-arch.github.io/">
+<meta name="theme-color" content="#f5f2ec">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+<meta property="og:type" content="profile">
+<meta property="og:locale" content="fr_BE">
+<meta property="og:title" content="Hafsa Lamtalssi — Développeuse Web à Bruxelles">
+<meta property="og:description" content="Développeuse web junior à Bruxelles, à la recherche d'un stage. React, TypeScript, PHP, Node.js.">
+<meta property="og:url" content="https://hafsalamtalssi294-arch.github.io/">
+<meta property="og:image" content="https://hafsalamtalssi294-arch.github.io/img/hafsa.jpg">
+
+<link rel="preload" href="fonts/bodoni-moda-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+<script>
+  // Applique le thème choisi avant l'affichage (évite un flash de couleur)
+  document.documentElement.classList.add('js');
+  try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+  // Ouverture animée : une fois par visite, sauf si l'appareil demande moins d'animations
+  try {
+    var calme = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!calme && !sessionStorage.getItem('intro-vue')) document.documentElement.classList.add('intro-on');
+  } catch (e) {}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Hafsa Lamtalssi",
+  "jobTitle": "Développeuse web junior",
+  "address": { "@type": "PostalAddress", "addressLocality": "Bruxelles", "addressCountry": "BE" },
+  "email": "hafsalamtalssi294@gmail.com",
+  "url": "https://hafsalamtalssi294-arch.github.io/",
+  "knowsAbout": ["React", "JavaScript", "TypeScript", "PHP", "Node.js", "SQL", "UI/UX"]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+
+<div class="intro" aria-hidden="true">
+  <div class="intro-mark"><span class="m"><span>H.</span></span><span class="m l"><span>L.</span></span></div>
+  <div class="intro-rule"></div>
+  <p class="intro-sub mono">Portfolio — Édition 2026</p>
+</div>
+
+<p class="folio mono" aria-hidden="true"><span class="folio-sec">N° 01 — Couverture</span><span class="folio-p">p. 01</span></p>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="mark" href="#top" aria-label="Hafsa Lamtalssi, haut de page">H.<em>L.</em></a>
+    <nav class="main" id="menu" aria-label="Navigation principale">
+      <ul>
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#competences">Compétences</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#parcours">Parcours</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="tools">
+      <button class="icon-btn theme-btn" type="button" aria-label="Mode sombre" aria-pressed="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor"/></svg>
+      </button>
+      <button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+        <span class="sr">Menu</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- N° 01 · COUVERTURE -->
+<div class="cover" id="top">
+  <div class="wrap">
+    <p class="issue mono"><span>N° 01</span><span>Édition 2026</span><span>Développeuse Web — Bruxelles</span><span>Vol. 22</span></p>
+    <div class="cover-grid">
+      <div>
+        <h1><span class="line"><span>Hafsa</span></span> <span class="line"><em>Lamtalssi</em></span></h1>
+        <p class="tagline">À la recherche d'un stage en développement web.</p>
+        <div class="actions">
+          <a class="btn solid" href="#contact">Me contacter <span aria-hidden="true">↗</span></a>
+          <a class="btn" href="cv-hafsa-lamtalssi.pdf" download>Télécharger mon CV (PDF) <span aria-hidden="true">↓</span></a>
+          <a class="btn" href="#projets">Voir mon travail <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+      <figure class="cover-photo">
+        <div class="ph" data-label="Photo : img/hafsa.jpg">
+          <img src="img/hafsa.jpg" alt="Portrait de Hafsa Lamtalssi souriante sur un balcon au coucher du soleil, Bruxelles" width="900" height="1200" fetchpriority="high" onerror="this.remove()">
+        </div>
+        <figcaption>Hafsa Lamtalssi — Bruxelles, 2026</figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+
+<!-- N° 02 · À PROPOS -->
+<section id="apropos">
+  <div class="wrap">
+    <p class="sec-head mono"><span>N° 02 — À propos</span><span>p. 04</span></p>
+    <h2 class="sec-title">Le <em>portrait</em></h2>
+    <div class="about-grid">
+      <div>
+        <div class="frame">
+          <div class="ph square" data-label="Photo : img/hafsa-3.jpg">
+            <img src="img/hafsa-3.jpg" alt="Hafsa Lamtalssi de profil, appuyée sur une balustrade face à la ville" width="800" height="1000" loading="lazy" onerror="this.remove()">
+          </div>
+        </div>
+        <dl class="facts mono">
+          <div><dt>Âge</dt><dd>22 ans</dd></div>
+          <div><dt>Ville</dt><dd>Bruxelles</dd></div>
+          <div><dt>Statut</dt><dd>Dernière année — Dév. Web</dd></div>
+        </dl>
+      </div>
+      <div class="about-text">
+        <p>J'ai 22 ans, je vis à Bruxelles et je suis en dernière année de développement web. Avant d'écrire du code, j'ai passé deux ans en infographie — à apprendre la grille, la couleur, la typographie.</p>
+        <p>Ce parcours fait de moi une développeuse qui construit des interfaces avec une vraie attention au détail, à la typographie et à l'expérience utilisateur. Le code d'abord, le regard en plus. <strong>Je recherche actuellement un stage ou un premier poste en développement web.</strong></p>
+        <p class="pull">Un bon code se lit comme une belle page : chaque détail a sa place.</p>
+      </div>
+    </div>
+    <div class="spread">
+      <div class="ph" data-label="Photo : img/hafsa-2.jpg">
+        <img src="img/hafsa-2.jpg" alt="Hafsa Lamtalssi regardant le coucher du soleil sur les toits de Bruxelles" width="1600" height="1000" loading="lazy" onerror="this.remove()">
+      </div>
+      <blockquote><p>« Le code d'abord, le regard en plus. »</p></blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- N° 03 · COMPÉTENCES -->
+<section id="competences">
+  <div class="wrap">
+    <p class="sec-head mono"><span>N° 03 — Compétences</span><span>p. 08</span></p>
+    <h2 class="sec-title">Le <em>sommaire</em></h2>
+    <div class="skills">
+      <div class="skill">
+        <h3>Front-end <span>01</span></h3>
+        <ol><li>React <span>01</span></li><li>JavaScript (ES6+) <span>02</span></li><li>TypeScript <span>03</span></li><li>HTML5 <span>04</span></li><li>CSS3 <span>05</span></li><li>Tailwind CSS <span>06</span></li></ol>
+      </div>
+      <div class="skill">
+        <h3>Back-end <span>02</span></h3>
+        <ol><li>PHP <span>01</span></li><li>Node.js <span>02</span></li><li>SQL / MySQL <span>03</span></li><li>API REST <span>04</span></li></ol>
+      </div>
+      <div class="skill">
+        <h3>Outils <span>03</span></h3>
+        <ol><li>Git &amp; GitHub <span>01</span></li><li>VS Code <span>02</span></li><li>Vite <span>03</span></li><li>npm <span>04</span></li><li>Figma <span>05</span></li></ol>
+      </div>
+      <div class="skill">
+        <h3>Design <span>04</span></h3>
+        <ol><li>Photoshop <span>01</span></li><li>Illustrator <span>02</span></li><li>Typographie <span>03</span></li><li>UI/UX <span>04</span></li></ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- N° 04 · PROJETS
+     ⚠ À REMPLACER par de vrais projets avant d'envoyer le site à un recruteur :
+     nom, description, technologies, lien GitHub et lien du site. -->
+<section id="projets">
+  <div class="wrap">
+    <p class="sec-head mono"><span>N° 04 — Projets — Développement</span><span>p. 12</span></p>
+    <h2 class="sec-title">Le <em>travail</em></h2>
+    <ol class="projects">
+      <li class="project">
+        <span class="num mono">01</span>
+        <div><h3>Maison Oud</h3><ul class="tags"><li>React</li><li>TypeScript</li><li>Tailwind</li></ul></div>
+        <p>Boutique e-commerce pour une marque de parfums spécialisée dans l'Oud : catalogue, panier et paiement.</p>
+        <div class="plinks mono"><a href="https://github.com/" target="_blank" rel="noopener">Code ↗</a><a href="#">Voir le site ↗</a></div>
+      </li>
+      <li class="project">
+        <span class="num mono">02</span>
+        <div><h3>Ananas</h3><ul class="tags"><li>Node.js</li><li>MySQL</li><li>React</li></ul></div>
+        <p>Application de gestion de tâches avec authentification et API REST.</p>
+        <div class="plinks mono"><a href="https://github.com/" target="_blank" rel="noopener">Code ↗</a><a href="#">Voir le site ↗</a></div>
+      </li>
+      <li class="project">
+        <span class="num mono">03</span>
+        <div><h3>Olive &amp; Oak</h3><ul class="tags"><li>PHP</li><li>SQL</li><li>JavaScript</li></ul></div>
+        <p>Site vitrine et système de réservation pour un restaurant bruxellois.</p>
+        <div class="plinks mono"><a href="https://github.com/" target="_blank" rel="noopener">Code ↗</a><a href="#">Voir le site ↗</a></div>
+      </li>
+      <li class="project">
+        <span class="num mono">04</span>
+        <div><h3>SkyLens</h3><ul class="tags"><li>JavaScript</li><li>Vite</li><li>API REST</li></ul></div>
+        <p>Visualisation de données météo en temps réel à partir d'une API publique.</p>
+        <div class="plinks mono"><a href="https://github.com/" target="_blank" rel="noopener">Code ↗</a><a href="#">Voir le site ↗</a></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- N° 05 · TRAVAUX GRAPHIQUES -->
+<section id="graphisme">
+  <div class="wrap">
+    <p class="sec-head mono"><span>N° 05 — Travaux graphiques</span><span>p. 18</span></p>
+    <h2 class="sec-title">En <em>marge</em> du code</h2>
+    <div class="gallery">
+      <figure><div class="ph" data-label="img/g1.jpg"><img src="img/g1.jpg" alt="Affiche — Bau und Kunst" width="800" height="1000" loading="lazy" onerror="this.remove()"></div><figcaption>01 · Affiche — Bau und Kunst</figcaption></figure>
+      <figure><div class="ph" data-label="img/g2.jpg"><img src="img/g2.jpg" alt="Identité visuelle — Monogramme" width="800" height="1000" loading="lazy" onerror="this.remove()"></div><figcaption>02 · Identité visuelle — Monogramme</figcaption></figure>
+      <figure><div class="ph" data-label="img/g3.jpg"><img src="img/g3.jpg" alt="Mise en page — Magazine" width="800" height="1000" loading="lazy" onerror="this.remove()"></div><figcaption>03 · Mise en page — Magazine</figcaption></figure>
+      <figure><div class="ph" data-label="img/g4.jpg"><img src="img/g4.jpg" alt="Pochette d'album" width="800" height="1000" loading="lazy" onerror="this.remove()"></div><figcaption>04 · Pochette d'album</figcaption></figure>
+      <figure><div class="ph" data-label="img/g5.jpg"><img src="img/g5.jpg" alt="Packaging — Thé artisanal" width="800" height="1000" loading="lazy" onerror="this.remove()"></div><figcaption>05 · Packaging — Thé artisanal</figcaption></figure>
+      <figure><div class="ph" data-label="img/g6.jpg"><img src="img/g6.jpg" alt="Typographie expérimentale" width="800" height="1000" loading="lazy" onerror="this.remove()"></div><figcaption>06 · Typographie expérimentale</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- N° 06 · PARCOURS -->
+<section id="parcours">
+  <div class="wrap">
+    <p class="sec-head mono"><span>N° 06 — Parcours</span><span>p. 22</span></p>
+    <h2 class="sec-title">Le <em>chemin</em></h2>
+    <ol class="path">
+      <li><time datetime="2024/2026">2024 – 2026</time><h3>Développement Web</h3><span class="mono">Dernière année</span></li>
+      <li><time datetime="2022/2024">2022 – 2024</time><h3>Infographie</h3><span class="mono">2 ans</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- N° 07 · CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <p class="sec-head mono"><span>N° 07 — Contact</span><span>p. 26</span></p>
+    <h2 class="sec-title">Travaillons <em>ensemble.</em></h2>
+    <div class="contact-grid">
+      <div>
+        <dl class="coords">
+          <div><dt class="mono">E-mail</dt><dd><a href="mailto:hafsalamtalssi294@gmail.com" id="email">hafsalamtalssi294@gmail.com</a><button class="copy" type="button" data-copy="hafsalamtalssi294@gmail.com">Copier</button></dd></div>
+          <div><dt class="mono">Téléphone</dt><dd><a href="tel:+32492530916">+32 492 53 09 16</a></dd></div>
+          <div><dt class="mono">Lieu</dt><dd>Basée à Bruxelles, Belgique</dd></div>
+        </dl>
+        <div class="links">
+          <!-- ⚠ Remplacer par l'adresse exacte du profil LinkedIn et GitHub -->
+          <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a class="btn" href="https://github.com/hafsalamtalssi294-arch" target="_blank" rel="noopener">GitHub ↗</a>
+          <a class="btn" href="cv-hafsa-lamtalssi.pdf" download>Télécharger mon CV (PDF) ↓</a>
+        </div>
+      </div>
+      <!-- Formulaire : remplacer VOTRE-ID par l'identifiant Formspree (formspree.io) -->
+      <form class="contact-form" action="https://formspree.io/f/VOTRE-ID" method="post" novalidate>
+        <div class="field"><label class="mono" for="f-nom">Nom</label><input id="f-nom" name="nom" type="text" autocomplete="name" required maxlength="100"></div>
+        <div class="field"><label class="mono" for="f-email">E-mail</label><input id="f-email" name="email" type="email" autocomplete="email" required maxlength="150"></div>
+        <input type="hidden" name="_subject" value="Portfolio — nouveau message">
+        <div class="field"><label class="mono" for="f-message">Message</label><textarea id="f-message" name="message" required maxlength="5000"></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="f-site">Ne pas remplir</label><input id="f-site" name="_gotcha" type="text" tabindex="-1" autocomplete="off"></div>
+        <label class="consent" for="f-ok"><input id="f-ok" name="consentement" type="checkbox" value="oui" required> J'accepte que mes données soient utilisées uniquement pour répondre à mon message.</label>
+        <button class="btn solid" type="submit">Envoyer <span aria-hidden="true">→</span></button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site">
+  <div class="wrap mono">
+    <span>© 2026 Hafsa Lamtalssi — Conçu et développé par moi-même.</span>
+    <span>Fin — p. 28</span>
+  </div>
+</footer>
+<script src="js/main.js" defer></script>
+</body>
+</html>
