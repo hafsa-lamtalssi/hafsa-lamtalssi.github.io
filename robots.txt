@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hafsalamtalssi294-arch.github.io/sitemap.xml
+Sitemap: https://hafsa-lamtalssi.github.io/sitemap.xml
