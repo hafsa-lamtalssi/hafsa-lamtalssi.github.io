@@ -1,5 +1,8 @@
 // Portfolio Hafsa Lamtalssi — interactions
 
+// Texte traduit (voir js/i18n.js) ; repli sur le français
+function t(key, fr) { return window.T ? window.T(key, fr) : fr; }
+
 // Mode sombre (mémorisé dans le navigateur du visiteur)
 (function () {
   var root = document.documentElement;
@@ -13,7 +16,7 @@
   function sync() {
     var dark = isDark();
     btn.setAttribute('aria-pressed', dark ? 'true' : 'false');
-    btn.setAttribute('aria-label', dark ? 'Mode clair' : 'Mode sombre');
+    btn.setAttribute('aria-label', dark ? t('theme.light', 'Mode clair') : t('theme.dark', 'Mode sombre'));
   }
   btn.addEventListener('click', function () {
     var next = isDark() ? 'light' : 'dark';
@@ -21,6 +24,7 @@
     try { localStorage.setItem('theme', next); } catch (e) {}
     sync();
   });
+  document.addEventListener('langchange', sync);
   sync();
 })();
 
@@ -45,7 +49,7 @@
   document.querySelectorAll('.copy').forEach(function (b) {
     b.addEventListener('click', function () {
       var text = b.getAttribute('data-copy');
-      function done() { b.textContent = 'Copié'; setTimeout(function () { b.textContent = 'Copier'; }, 1800); }
+      function done() { b.textContent = t('copied', 'Copié'); setTimeout(function () { b.textContent = t('copy', 'Copier'); }, 1800); }
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(text).then(done, function () { selectEmail(); });
       } else { selectEmail(); }
@@ -73,25 +77,25 @@
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     var nom = form.nom.value.trim(), email = form.email.value.trim(), message = form.message.value.trim();
-    if (!nom || !email || !message) return say('Merci de remplir le nom, l\'e-mail et le message.', false);
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return say('L\'adresse e-mail ne semble pas valide.', false);
-    if (!form.consentement.checked) return say('Merci de cocher la case de consentement.', false);
-    if (form.action.indexOf('VOTRE-ID') !== -1) return say('Le formulaire n\'est pas encore activé. Écrivez-moi directement à hafsalamtalssi294@gmail.com.', false);
+    if (!nom || !email || !message) return say(t('msg.fill', 'Merci de remplir le nom, l\'e-mail et le message.'), false);
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return say(t('msg.email', 'L\'adresse e-mail ne semble pas valide.'), false);
+    if (!form.consentement.checked) return say(t('msg.consent', 'Merci de cocher la case de consentement.'), false);
+    if (form.action.indexOf('VOTRE-ID') !== -1) return say(t('msg.off', 'Le formulaire n\'est pas encore activé.'), false);
 
     submit.disabled = true;
-    say('Envoi en cours…', true);
+    say(t('msg.sending', 'Envoi en cours…'), true);
     fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
       .then(function (r) { return r.json().catch(function () { return { ok: false }; }); })
       .then(function (data) {
         if (data.ok) {
           form.reset();
-          say('Merci, votre message a bien été envoyé. Je vous réponds au plus vite.', true);
+          say(t('msg.ok', 'Merci, votre message a bien été envoyé.'), true);
         } else {
-          say(data.error || 'Le message n\'a pas pu être envoyé. Écrivez-moi directement à hafsalamtalssi294@gmail.com.', false);
+          say(t('msg.fail', 'Le message n\'a pas pu être envoyé.'), false);
         }
       })
       .catch(function () {
-        say('Le message n\'a pas pu être envoyé. Écrivez-moi directement à hafsalamtalssi294@gmail.com.', false);
+        say(t('msg.fail', 'Le message n\'a pas pu être envoyé.'), false);
       })
       .then(function () { submit.disabled = false; });
   });
