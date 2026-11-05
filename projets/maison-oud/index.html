@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maison Oud — Accueil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&amp;family=Jost:wght@200;300;400&amp;display=swap" />
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+
+<div id="wrapper">
+
+ 
+  <header id="site-header">
+
+    <a id="logo" href="index.html" title="Accueil">
+      <div class="logo-cercle"></div>
+      <div class="logo-texte">
+        <span class="logo-nom">Maison Oud</span>
+        <span class="logo-tagline">Eau de Parfum</span>
+      </div>
+    </a>
+
+    <nav id="main-nav">
+      <ul>
+        <li><a href="index.html" class="active">Accueil</a></li>
+        <li class="has-sub">
+          <a href="galerie.html">Collection</a>
+          <ul class="submenu">
+            <li><a href="galerie.html">Galerie</a></li>
+            <li><a href="galerie.html#notes">Notes olfactives</a></li>
+            <li><a href="galerie.html#origine">Origines</a></li>
+          </ul>
+        </li>
+        <li><a href="formulaire.html">Formulaire</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+  
+  <section id="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <span class="ligne1">Le</span>
+        <span class="ligne2">Oud</span>
+      </h1>
+      <div class="hero-divider"></div>
+      <p class="hero-sub">
+        Un voyage sensoriel entre les terres d'Orient<br />
+        et une élégance contemporaine. Une fragrance<br />
+        profonde aux notes boisées, ambrées et raffinées.
+      </p>
+    </div>
+  </section>
+
+
+  <div id="main-row">
+
+    
+    <aside id="sidebar-login">
+      <p class="aside-label">Connexion</p>
+      <form action="#" method="post">
+        <div class="field">
+          <label for="lg-email">Courriel</label>
+          <input type="email" id="lg-email" name="email" placeholder="email@exemple.com" />
+        </div>
+        <div class="field">
+          <label for="lg-pass">Mot de passe</label>
+          <input type="password" id="lg-pass" name="password" placeholder="· · · · · · · ·" />
+        </div>
+        <button type="submit" class="btn-login">Connexion</button>
+        <a href="#" class="forgot">Mot de passe oublié ?</a>
+      </form>
+      <p class="aside-sep">· · ·</p>
+      <p class="aside-note">Pas encore membre ?<br />
+        <a href="formulaire.html">Créer un compte</a>
+      </p>
+    </aside>
+
+    
+    <main id="main-content">
+
+      
+      <section class="content-section" id="intro">
+        <p class="section-eyebrow">L'essence</p>
+        <h2>Un parfum<br /><em>rare et noble</em></h2>
+        <p>Le oud est l'une des matières les plus emblématiques de la parfumerie
+           de luxe. Son caractère boisé, sombre et intense crée une présence
+           olfactive unique, immédiatement reconnaissable.</p>
+        <p>Associé à l'élégance, au mystère et à la chaleur, il inspire des
+           compositions sophistiquées qui traduisent une identité
+           <strong>forte et intemporelle</strong>.</p>
+
+        <div class="cards">
+          <div class="card">
+            <div class="card-num">01</div>
+            <h3>Profil olfactif</h3>
+            <p>Boisé, ambré, intense et raffiné. Une signature profonde qui dure.</p>
+          </div>
+          <div class="card">
+            <div class="card-num">02</div>
+            <h3>Inspiration</h3>
+            <p>Orient, luxe discret, profondeur et mystère des terres ancestrales.</p>
+          </div>
+          <div class="card">
+            <div class="card-num">03</div>
+            <h3>Signature</h3>
+            <p>Une présence élégante au sillage noble et chaleureux. Inimitable.</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="rule"><span>✦</span></div>
+
+      
+      <section class="content-section" id="presentation">
+        <p class="section-eyebrow">Présentation</p>
+        <h2>Découvrir <em>Maison Oud</em></h2>
+        <video id="video-presentation" controls poster="videos/presentation-poster.jpg" preload="metadata">
+          <source src="videos/presentation.mp4" type="video/mp4" />
+          Votre navigateur ne prend pas en charge la lecture vidéo intégrée.
+          Vous pouvez <a href="videos/presentation.mp4">télécharger la vidéo</a>.
+        </video>
+      </section>
+
+      <div class="rule"><span>✦</span></div>
+
+      
+      <section class="content-section" id="profil">
+        <p class="section-eyebrow">Profil olfactif</p>
+        <h2>La pyramide <em style="display:inline;">olfactive</em></h2>
+
+        <map name="parfum-map">
+          <area shape="circle" coords="100,38,28"
+                href="galerie.html#notes"
+                alt="Notes de tête" title="Notes de tête" />
+          <area shape="circle" coords="100,100,38"
+                href="galerie.html#origine"
+                alt="Cœur" title="Cœur de la fragrance" />
+          <area shape="circle" coords="100,178,28"
+                href="galerie.html"
+                alt="Notes de fond" title="Notes de fond" />
+        </map>
+
+        <figure id="fragrance-map">
+          <img src="images/pyramide.jpg"
+               alt="Flacon Maison Oud"
+               width="200" height="200"
+               usemap="#parfum-map" />
+          <figcaption>Explorer les notes</figcaption>
+        </figure>
+
+        <table id="table-olfactif">
+          <caption>Pyramide olfactive — Maison Oud</caption>
+          <thead>
+            <tr>
+              <th scope="col">Famille</th>
+              <th scope="col">Notes</th>
+              <th scope="col">Intensité</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="2" class="cell-famille">Notes de tête</td>
+              <td>Bergamote, Poivre rose</td>
+              <td>★★★☆☆</td>
+            </tr>
+            <tr>
+              <td>Cardamome, Safran</td>
+              <td>★★★★☆</td>
+            </tr>
+            <tr>
+              <td rowspan="2" class="cell-famille">Notes de cœur</td>
+              <td>Rose de Damas, Oud</td>
+              <td>★★★★★</td>
+            </tr>
+            <tr>
+              <td>Encens, Patchouli</td>
+              <td>★★★★☆</td>
+            </tr>
+            <tr>
+              <td class="cell-famille">Notes de fond</td>
+              <td colspan="2" class="cell-fond">Musc blanc · Ambre · Santal · Vétiver</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+     
+      <section class="content-section" id="citation">
+        <blockquote style="border-left: 1px solid #c9a84c; padding-left: 22px; opacity: 0.65;">
+          <p><em>« Le oud est l'or liquide de la parfumerie orientale. »</em></p>
+          <cite>— Parfumeur anonyme, XIVe siècle</cite>
+        </blockquote>
+      </section>
+
+    </main>
+
+    
+    <aside id="sidebar-links">
+      <p class="aside-label">Actualités</p>
+      <ul class="news-list">
+        <li>
+          <span class="news-date">05 juin 2026</span>
+          <a href="#">Nouvelle collection Été</a>
+        </li>
+        <li>
+          <span class="news-date">20 mai 2026</span>
+          <a href="#">Oud Noir — édition limitée</a>
+        </li>
+        <li>
+          <span class="news-date">02 mai 2026</span>
+          <a href="#">Pop-up Paris — 8e</a>
+        </li>
+        <li>
+          <span class="news-date">14 avr. 2026</span>
+          <a href="#">L'art de la distillation</a>
+        </li>
+      </ul>
+      <p class="aside-sep">· · ·</p>
+      <p class="aside-label">Pages</p>
+      <ul class="quick-links">
+        <li><a href="galerie.html">Galerie</a></li>
+        <li><a href="formulaire.html">Formulaire</a></li>
+        <li><a href="#">À propos</a></li>
+      </ul>
+    </aside>
+
+  </div>
+
+
+  <div id="stats">
+    <div class="stat">
+      <div class="stat-num">XXV</div>
+      <div class="stat-label">Notes olfactives</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">25</div>
+      <div class="stat-label">Heures de sillage</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">∞</div>
+      <div class="stat-label">Présence intemporelle</div>
+    </div>
+  </div>
+
+  
+  <footer id="site-footer">
+    <span class="footer-copy">© 2026 — Maison Oud</span>
+    <span class="footer-logo">M · O</span>
+    <span class="footer-right">Parfum d'Exception</span>
+  </footer>
+
+</div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

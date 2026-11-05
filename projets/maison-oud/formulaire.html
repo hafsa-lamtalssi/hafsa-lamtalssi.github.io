@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maison Oud — Formulaire</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&amp;family=Jost:wght@200;300;400&amp;display=swap" />
+  <link rel="stylesheet" href="css/formulaire.css" />
+</head>
+<body>
+
+<div id="wrapper">
+
+  
+  <header id="site-header">
+    <a id="logo" href="index.html" title="Accueil">
+      <div class="logo-cercle"></div>
+      <div class="logo-texte">
+        <span class="logo-nom">Maison Oud</span>
+        <span class="logo-tagline">Eau de Parfum</span>
+      </div>
+    </a>
+    <nav id="main-nav">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li class="has-sub">
+          <a href="galerie.html">Collection</a>
+          <ul class="submenu">
+            <li><a href="galerie.html">Galerie</a></li>
+            <li><a href="galerie.html#notes">Notes olfactives</a></li>
+          </ul>
+        </li>
+        <li><a href="formulaire.html" class="active">Formulaire</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+      </ul>
+    </nav>
+  </header>
+
+ 
+  <section id="hero">
+    <p class="hero-eyebrow">Espace client</p>
+    <h1>Votre <em>commande</em></h1>
+    <p>Remplissez le formulaire ci-dessous pour commander votre fragrance
+       ou nous contacter. Chaque détail compte.</p>
+  </section>
+
+  
+  <div id="form-wrap">
+    <form id="main-form" action="#" method="post">
+
+      
+      <p class="form-section-title">Identité</p>
+
+      <div class="field">
+        <label for="prenom">Prénom</label>
+        <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" />
+      </div>
+
+      <div class="field">
+        <label for="nom">Nom</label>
+        <input type="text" id="nom" name="nom" placeholder="Votre nom" />
+      </div>
+
+      <div class="field">
+        <label for="email">Adresse e-mail</label>
+        <input type="email" id="email" name="email" placeholder="votre@email.com" />
+      </div>
+
+      <div class="field">
+        <label for="tel">Téléphone</label>
+        <input type="tel" id="tel" name="tel" placeholder="+32 · · · · · · · ·" />
+      </div>
+
+      <div class="field">
+        <label for="naissance">Date de naissance</label>
+        <input type="date" id="naissance" name="naissance" />
+      </div>
+
+      <div class="field">
+        <label for="password">Mot de passe</label>
+        <input type="password" id="password" name="password" placeholder="· · · · · · · ·" />
+      </div>
+
+      
+      <p class="form-section-title">Commande</p>
+
+      <div class="field">
+        <label for="fragrance">Fragrance</label>
+        <select id="fragrance" name="fragrance">
+          <option value="" disabled selected>Choisir une fragrance</option>
+          <option value="oud-noir">Oud Noir</option>
+          <option value="oud-rose">Oud &amp; Rose</option>
+          <option value="oud-ambre">Oud Ambré</option>
+          <option value="oud-santal">Oud &amp; Santal</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="quantite">Quantité</label>
+        <input type="number" id="quantite" name="quantite"
+               min="1" max="10" placeholder="1" />
+      </div>
+
+      <div class="field full">
+        <label>Format</label>
+        <div class="check-group">
+          <label class="check-item">
+            <input type="radio" name="format" value="30ml" />
+            <span>30 ml — Découverte</span>
+          </label>
+          <label class="check-item">
+            <input type="radio" name="format" value="50ml" />
+            <span>50 ml — Essentiel</span>
+          </label>
+          <label class="check-item">
+            <input type="radio" name="format" value="100ml" checked />
+            <span>100 ml — Collection</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="field full">
+        <label>Options</label>
+        <div class="check-group">
+          <label class="check-item">
+            <input type="checkbox" name="coffret" value="coffret" />
+            <span>Coffret cadeau</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" name="gravure" value="gravure" />
+            <span>Gravure personnalisée</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" name="newsletter" value="newsletter" />
+            <span>S'inscrire à la newsletter</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="field full">
+        <label for="intensite">Intensité souhaitée</label>
+        <input type="range" id="intensite" name="intensite" min="1" max="5" value="3" />
+      </div>
+
+      
+      <p class="form-section-title">Livraison</p>
+
+      <div class="field full">
+        <label for="adresse">Adresse</label>
+        <input type="text" id="adresse" name="adresse" placeholder="Rue et numéro" />
+      </div>
+
+      <div class="field">
+        <label for="ville">Ville</label>
+        <input type="text" id="ville" name="ville" placeholder="Bruxelles" />
+      </div>
+
+      <div class="field">
+        <label for="code-postal">Code postal</label>
+        <input type="text" id="code-postal" name="code_postal" placeholder="1000" />
+      </div>
+
+      <div class="field full">
+        <label for="message">Message ou instructions</label>
+        <textarea id="message" name="message"
+                  placeholder="Instructions particulières, message à joindre…"></textarea>
+      </div>
+
+      <div class="field full">
+        <label for="photo">Photo de référence (optionnel)</label>
+        <input type="file" id="photo" name="photo" accept="image/*" />
+      </div>
+
+      
+      <div class="form-actions">
+        <button type="submit" class="btn-submit">Confirmer la commande</button>
+        <button type="reset" class="btn-reset">Réinitialiser</button>
+      </div>
+
+      <p class="form-note">
+        Vos données sont traitées de manière confidentielle et ne sont jamais partagées.
+      </p>
+
+    </form>
+  </div>
+
+  
+  <footer id="site-footer">
+    <span class="footer-copy">© 2026 — Maison Oud</span>
+    <span class="footer-logo">M · O</span>
+    <span class="footer-right">Parfum d'Exception</span>
+  </footer>
+
+</div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
