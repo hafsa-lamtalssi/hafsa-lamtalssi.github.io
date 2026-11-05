@@ -4,28 +4,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Maison Oud — Accueil</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <meta name="description" content="Maison Oud, maison de parfums autour de l'oud : profil olfactif, présentation et pyramide des notes." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&amp;family=Jost:wght@200;300;400&amp;display=swap" />
+  <link rel="stylesheet" href="css/commun.css" />
   <link rel="stylesheet" href="css/index.css" />
 </head>
 <body>
+<a class="skip" href="#hero">Aller au contenu</a>
 
 <div id="wrapper">
 
  
   <header id="site-header">
 
-    <a id="logo" href="index.html" title="Accueil">
-      <div class="logo-cercle"></div>
+    <a id="logo" href="index.html" aria-label="Maison Oud, accueil">
+      <div class="logo-cercle" aria-hidden="true"></div>
       <div class="logo-texte">
         <span class="logo-nom">Maison Oud</span>
         <span class="logo-tagline">Eau de Parfum</span>
       </div>
     </a>
 
-    <nav id="main-nav">
+    <nav id="main-nav" aria-label="Navigation principale">
       <ul>
-        <li><a href="index.html" class="active">Accueil</a></li>
+        <li><a href="index.html" class="active" aria-current="page">Accueil</a></li>
         <li class="has-sub">
           <a href="galerie.html">Collection</a>
           <ul class="submenu">
@@ -35,7 +39,6 @@
           </ul>
         </li>
         <li><a href="formulaire.html">Formulaire</a></li>
-        <li><a href="galerie.html">Galerie</a></li>
       </ul>
     </nav>
 
@@ -63,17 +66,18 @@
     
     <aside id="sidebar-login">
       <p class="aside-label">Connexion</p>
-      <form action="#" method="post">
+      <form id="login-form" action="#" method="post" novalidate>
         <div class="field">
           <label for="lg-email">Courriel</label>
-          <input type="email" id="lg-email" name="email" placeholder="email@exemple.com" />
+          <input type="email" id="lg-email" name="email" placeholder="email@exemple.com" autocomplete="email" required />
         </div>
         <div class="field">
           <label for="lg-pass">Mot de passe</label>
-          <input type="password" id="lg-pass" name="password" placeholder="· · · · · · · ·" />
+          <input type="password" id="lg-pass" name="password" placeholder="· · · · · · · ·" autocomplete="current-password" required />
         </div>
         <button type="submit" class="btn-login">Connexion</button>
         <a href="#" class="forgot">Mot de passe oublié ?</a>
+        <p class="form-message" id="login-message" role="status" aria-live="polite"></p>
       </form>
       <p class="aside-sep">· · ·</p>
       <p class="aside-note">Pas encore membre ?<br />
@@ -132,7 +136,7 @@
       
       <section class="content-section" id="profil">
         <p class="section-eyebrow">Profil olfactif</p>
-        <h2>La pyramide <em style="display:inline;">olfactive</em></h2>
+        <h2>La pyramide <em class="inline">olfactive</em></h2>
 
         <map name="parfum-map">
           <area shape="circle" coords="100,38,28"
@@ -148,12 +152,13 @@
 
         <figure id="fragrance-map">
           <img src="images/pyramide.jpg"
-               alt="Flacon Maison Oud"
+               alt="Flacon Maison Oud : cliquez sur le haut, le centre ou le bas pour explorer les notes"
                width="200" height="200"
                usemap="#parfum-map" />
           <figcaption>Explorer les notes</figcaption>
         </figure>
 
+        <div class="table-wrap">
         <table id="table-olfactif">
           <caption>Pyramide olfactive — Maison Oud</caption>
           <thead>
@@ -188,11 +193,12 @@
             </tr>
           </tbody>
         </table>
+        </div>
       </section>
 
      
       <section class="content-section" id="citation">
-        <blockquote style="border-left: 1px solid #c9a84c; padding-left: 22px; opacity: 0.65;">
+        <blockquote>
           <p><em>« Le oud est l'or liquide de la parfumerie orientale. »</em></p>
           <cite>— Parfumeur anonyme, XIVe siècle</cite>
         </blockquote>
@@ -251,7 +257,7 @@
   
   <footer id="site-footer">
     <span class="footer-copy">© 2026 — Maison Oud</span>
-    <span class="footer-logo">M · O</span>
+    <span class="footer-logo" aria-hidden="true">M · O</span>
     <span class="footer-right">Parfum d'Exception</span>
   </footer>
 

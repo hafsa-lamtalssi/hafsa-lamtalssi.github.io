@@ -4,28 +4,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Maison Oud — Galerie</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <meta name="description" content="La galerie Maison Oud : quatre senteurs autour de l'oud, notes olfactives et origines." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&amp;family=Jost:wght@200;300;400&amp;display=swap" />
+  <link rel="stylesheet" href="css/commun.css" />
   <link rel="stylesheet" href="css/galerie.css" />
 </head>
 <body>
+<a class="skip" href="#hero">Aller au contenu</a>
 
 <div id="wrapper">
 
   
   <header id="site-header">
-    <a id="logo" href="index.html" title="Accueil">
-      <div class="logo-cercle"></div>
+    <a id="logo" href="index.html" aria-label="Maison Oud, accueil">
+      <div class="logo-cercle" aria-hidden="true"></div>
       <div class="logo-texte">
         <span class="logo-nom">Maison Oud</span>
         <span class="logo-tagline">Eau de Parfum</span>
       </div>
     </a>
-    <nav id="main-nav">
+    <nav id="main-nav" aria-label="Navigation principale">
       <ul>
         <li><a href="index.html">Accueil</a></li>
         <li class="has-sub">
-          <a href="galerie.html" class="active">Collection</a>
+          <a href="galerie.html" class="active" aria-current="page">Collection</a>
           <ul class="submenu">
             <li><a href="galerie.html">Galerie</a></li>
             <li><a href="galerie.html#notes">Notes olfactives</a></li>
@@ -33,13 +37,12 @@
           </ul>
         </li>
         <li><a href="formulaire.html">Formulaire</a></li>
-        <li><a href="galerie.html" class="active">Galerie</a></li>
       </ul>
     </nav>
   </header>
 
 
-  <section id="hero">
+  <section id="hero" class="page-hero">
     <p class="eyebrow">Collection</p>
     <h1>La <em>galerie</em></h1>
     <p>Explorez l'univers visuel de Maison Oud — flacons, matières premières
@@ -57,7 +60,7 @@
         <div class="senteur-img">
           <span class="senteur-num">01</span>
           
-          <img src="images/oudNoir.jpg" alt="Oud Noir" />
+          <img loading="lazy" src="images/oudNoir.jpg" alt="Oud Noir" />
         </div>
         <div class="senteur-body">
           <h3>Oud <em>Noir</em></h3>
@@ -78,7 +81,7 @@
         <div class="senteur-img">
           <span class="senteur-num">02</span>
           
-          <img src="images/oudrose.jpg" alt="Oud et Rose" />
+          <img loading="lazy" src="images/oudrose.jpg" alt="Oud et Rose" />
         </div>
         <div class="senteur-body">
           <h3>Oud <em>&amp; Rose</em></h3>
@@ -99,7 +102,7 @@
         <div class="senteur-img">
           <span class="senteur-num">03</span>
           
-          <img src="images/oudvanille.jpg" alt="Oud Ambré" />
+          <img loading="lazy" src="images/oudvanille.jpg" alt="Oud Ambré" />
         </div>
         <div class="senteur-body">
           <h3>Oud <em>Ambré</em></h3>
@@ -120,7 +123,7 @@
         <div class="senteur-img">
           <span class="senteur-num">04</span>
          
-          <img src="images/oudAmbre.jpg" alt="Oud et Santal" />
+          <img loading="lazy" src="images/oudAmbre.jpg" alt="Oud et Santal" />
         </div>
         <div class="senteur-body">
           <h3>Oud <em>&amp; Santal</em></h3>
@@ -188,7 +191,7 @@
     <p class="eyebrow">Commander</p>
     <h2>Votre <em>commande</em></h2>
     <div class="iframe-wrap">
-      <iframe src="formulaire.html"
+      <iframe src="formulaire.html" loading="lazy"
               title="Formulaire de commande Maison Oud">
       </iframe>
     </div>
@@ -197,7 +200,7 @@
  
   <footer id="site-footer">
     <span class="footer-copy">© 2026 — Maison Oud</span>
-    <span class="footer-logo">M · O</span>
+    <span class="footer-logo" aria-hidden="true">M · O</span>
     <span class="footer-right">Parfum d'Exception</span>
   </footer>
 

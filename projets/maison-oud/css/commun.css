@@ -1,0 +1,301 @@
+/* Maison Oud — styles communs aux 3 pages
+   (couleurs, en-tête, menu, sous-menu, pied de page, accessibilité, responsive) */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --or:     #c9a84c;
+  --or-dim: #8f6f33;
+  --creme:  #f2ede6;
+  --noir:   #0c0a09;
+  --fond:   #0e0c0a;
+  --muted:  rgba(242,237,230,0.72);   /* texte secondaire : assez contrasté pour être lu */
+  --faible: rgba(242,237,230,0.58);   /* petits libellés */
+  --sep:    rgba(201,168,76,0.16);
+  --serif:  'Cormorant Garamond', Georgia, serif;
+  --sans:   'Jost', Arial, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--noir);
+  color: var(--creme);
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.8;
+  -webkit-text-size-adjust: 100%;
+}
+
+img, video, iframe { max-width: 100%; }
+
+/* Wrapper : 900px maximum, mais s'adapte aux petits écrans */
+#wrapper {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--fond);
+}
+
+/* Lien d'évitement pour la navigation au clavier */
+.skip {
+  position: absolute;
+  left: 12px;
+  top: -60px;
+  z-index: 200;
+  background: var(--or);
+  color: var(--noir);
+  padding: 8px 14px;
+  font-size: 13px;
+  text-decoration: none;
+}
+.skip:focus { top: 12px; }
+
+/* Contour visible au clavier (les champs retirent l'outline par défaut) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+area:focus-visible {
+  outline: 1px solid var(--or);
+  outline-offset: 3px;
+}
+
+/* ════════════════════════════════
+   EN-TÊTE
+════════════════════════════════ */
+#site-header {
+  display: flex;
+  align-items: center;
+  min-height: 70px;
+  padding: 0 40px;
+  border-bottom: 1px solid var(--sep);
+  position: relative;
+}
+
+#logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  position: relative;
+}
+
+.logo-cercle {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid var(--or-dim);
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* Point doré centré en position absolue */
+.logo-cercle::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 5px;
+  height: 5px;
+  background: var(--or);
+  border-radius: 50%;
+}
+
+.logo-texte { display: flex; flex-direction: column; gap: 3px; }
+
+.logo-nom {
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 7px;
+  text-transform: uppercase;
+  color: var(--creme);
+}
+
+.logo-tagline {
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--or);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-tagline::before {
+  content: '';
+  display: inline-block;
+  width: 22px;
+  height: 1px;
+  background: var(--or-dim);
+}
+
+/* Menu */
+#main-nav {
+  margin-left: auto;
+  position: relative;
+  z-index: 50;
+}
+
+#main-nav > ul { list-style: none; display: flex; }
+#main-nav > ul > li { position: relative; }
+
+#main-nav > ul > li > a {
+  display: block;
+  padding: 12px 20px;
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--faible);
+  transition: color 0.3s;
+}
+
+#main-nav > ul > li > a:hover,
+#main-nav > ul > li > a.active { color: var(--creme); }
+
+/* Soulignement doré de la page active */
+#main-nav > ul > li > a.active::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: var(--or);
+  margin-top: 3px;
+}
+
+/* Sous-menu : survol, clavier (focus-within) et toucher (script.js) */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%; right: 0;
+  min-width: 200px;
+  list-style: none;
+  background: #0a0806;
+  border: 1px solid var(--sep);
+  border-top: 1px solid var(--or-dim);
+  z-index: 100;
+}
+
+.submenu li a {
+  display: block;
+  padding: 12px 20px;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--faible);
+  transition: color 0.3s, background 0.3s;
+}
+
+.submenu li a:hover { color: var(--or); background: rgba(201,168,76,0.05); }
+
+#main-nav > ul > li.has-sub:hover .submenu,
+#main-nav > ul > li.has-sub:focus-within .submenu,
+#main-nav > ul > li.has-sub.open .submenu { display: block; }
+
+/* ════════════════════════════════
+   EN-TÊTE DES PAGES GALERIE ET FORMULAIRE
+════════════════════════════════ */
+.page-hero {
+  padding: 60px 50px 50px;
+  border-bottom: 1px solid var(--sep);
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background: radial-gradient(ellipse 50% 80% at 90% 50%, rgba(139,90,30,0.08) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.eyebrow,
+.hero-eyebrow {
+  font-size: 11px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--or);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.eyebrow::before,
+.hero-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 30px;
+  height: 1px;
+  background: var(--or-dim);
+}
+
+.page-hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(44px, 9vw, 64px);
+  font-weight: 300;
+  line-height: 0.95;
+  color: var(--creme);
+  margin-bottom: 20px;
+}
+
+.page-hero h1 em { font-style: italic; color: var(--or); }
+
+.page-hero p { color: var(--muted); max-width: 420px; position: relative; }
+
+/* ════════════════════════════════
+   PIED DE PAGE
+════════════════════════════════ */
+#site-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 22px 40px;
+  border-top: 1px solid var(--sep);
+}
+
+.footer-copy, .footer-right {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--faible);
+}
+
+.footer-logo {
+  font-family: var(--serif);
+  font-size: 17px;
+  letter-spacing: 10px;
+  color: var(--faible);
+}
+
+/* Message de confirmation des formulaires de démonstration */
+.form-message { font-size: 13px; margin-top: 12px; line-height: 1.6; }
+.form-message.ok { color: var(--or); }
+.form-message.err { color: #e3a3a3; }
+
+/* ════════════════════════════════
+   RESPONSIVE
+════════════════════════════════ */
+@media (max-width: 760px) {
+  #site-header {
+    flex-wrap: wrap;
+    padding: 14px 20px 0;
+  }
+  #main-nav { margin-left: 0; width: 100%; margin-top: 10px; }
+  #main-nav > ul { justify-content: space-between; }
+  #main-nav > ul > li > a { padding: 12px 6px; letter-spacing: 2px; }
+  .submenu { left: 0; right: auto; }
+  .page-hero { padding: 44px 20px 36px; }
+  #site-footer { flex-direction: column; text-align: center; padding: 22px 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
+}

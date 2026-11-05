@@ -4,24 +4,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Maison Oud — Formulaire</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <meta name="description" content="Commander une fragrance Maison Oud ou nous contacter." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&amp;family=Jost:wght@200;300;400&amp;display=swap" />
+  <link rel="stylesheet" href="css/commun.css" />
   <link rel="stylesheet" href="css/formulaire.css" />
 </head>
 <body>
+<a class="skip" href="#hero">Aller au contenu</a>
 
 <div id="wrapper">
 
   
   <header id="site-header">
-    <a id="logo" href="index.html" title="Accueil">
-      <div class="logo-cercle"></div>
+    <a id="logo" href="index.html" aria-label="Maison Oud, accueil">
+      <div class="logo-cercle" aria-hidden="true"></div>
       <div class="logo-texte">
         <span class="logo-nom">Maison Oud</span>
         <span class="logo-tagline">Eau de Parfum</span>
       </div>
     </a>
-    <nav id="main-nav">
+    <nav id="main-nav" aria-label="Navigation principale">
       <ul>
         <li><a href="index.html">Accueil</a></li>
         <li class="has-sub">
@@ -31,14 +35,13 @@
             <li><a href="galerie.html#notes">Notes olfactives</a></li>
           </ul>
         </li>
-        <li><a href="formulaire.html" class="active">Formulaire</a></li>
-        <li><a href="galerie.html">Galerie</a></li>
+        <li><a href="formulaire.html" class="active" aria-current="page">Formulaire</a></li>
       </ul>
     </nav>
   </header>
 
  
-  <section id="hero">
+  <section id="hero" class="page-hero">
     <p class="hero-eyebrow">Espace client</p>
     <h1>Votre <em>commande</em></h1>
     <p>Remplissez le formulaire ci-dessous pour commander votre fragrance
@@ -47,39 +50,39 @@
 
   
   <div id="form-wrap">
-    <form id="main-form" action="#" method="post">
+    <form id="main-form" action="#" method="post" enctype="multipart/form-data" novalidate>
 
       
-      <p class="form-section-title">Identité</p>
+      <p class="form-section-title">Identité et compte client</p>
 
       <div class="field">
         <label for="prenom">Prénom</label>
-        <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" />
+        <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" autocomplete="given-name" required />
       </div>
 
       <div class="field">
         <label for="nom">Nom</label>
-        <input type="text" id="nom" name="nom" placeholder="Votre nom" />
+        <input type="text" id="nom" name="nom" placeholder="Votre nom" autocomplete="family-name" required />
       </div>
 
       <div class="field">
         <label for="email">Adresse e-mail</label>
-        <input type="email" id="email" name="email" placeholder="votre@email.com" />
+        <input type="email" id="email" name="email" placeholder="votre@email.com" autocomplete="email" required />
       </div>
 
       <div class="field">
         <label for="tel">Téléphone</label>
-        <input type="tel" id="tel" name="tel" placeholder="+32 · · · · · · · ·" />
+        <input type="tel" id="tel" name="tel" placeholder="+32 · · · · · · · ·" autocomplete="tel" />
       </div>
 
       <div class="field">
-        <label for="naissance">Date de naissance</label>
-        <input type="date" id="naissance" name="naissance" />
+        <label for="naissance">Date de naissance <span class="aide">(pour votre offre anniversaire)</span></label>
+        <input type="date" id="naissance" name="naissance" autocomplete="bday" />
       </div>
 
       <div class="field">
-        <label for="password">Mot de passe</label>
-        <input type="password" id="password" name="password" placeholder="· · · · · · · ·" />
+        <label for="password">Mot de passe <span class="aide">(pour créer votre compte)</span></label>
+        <input type="password" id="password" name="password" placeholder="· · · · · · · ·" autocomplete="new-password" minlength="8" />
       </div>
 
       
@@ -87,7 +90,7 @@
 
       <div class="field">
         <label for="fragrance">Fragrance</label>
-        <select id="fragrance" name="fragrance">
+        <select id="fragrance" name="fragrance" required>
           <option value="" disabled selected>Choisir une fragrance</option>
           <option value="oud-noir">Oud Noir</option>
           <option value="oud-rose">Oud &amp; Rose</option>
@@ -102,8 +105,8 @@
                min="1" max="10" placeholder="1" />
       </div>
 
-      <div class="field full">
-        <label>Format</label>
+      <fieldset class="field full">
+        <legend class="label">Format</legend>
         <div class="check-group">
           <label class="check-item">
             <input type="radio" name="format" value="30ml" />
@@ -118,10 +121,10 @@
             <span>100 ml — Collection</span>
           </label>
         </div>
-      </div>
+      </fieldset>
 
-      <div class="field full">
-        <label>Options</label>
+      <fieldset class="field full">
+        <legend class="label">Options</legend>
         <div class="check-group">
           <label class="check-item">
             <input type="checkbox" name="coffret" value="coffret" />
@@ -136,11 +139,13 @@
             <span>S'inscrire à la newsletter</span>
           </label>
         </div>
-      </div>
+      </fieldset>
 
       <div class="field full">
         <label for="intensite">Intensité souhaitée</label>
-        <input type="range" id="intensite" name="intensite" min="1" max="5" value="3" />
+        <div class="range-row">
+          <input type="range" id="intensite" name="intensite" min="1" max="5" value="3" />
+        </div>
       </div>
 
       
@@ -148,17 +153,17 @@
 
       <div class="field full">
         <label for="adresse">Adresse</label>
-        <input type="text" id="adresse" name="adresse" placeholder="Rue et numéro" />
+        <input type="text" id="adresse" name="adresse" placeholder="Rue et numéro" autocomplete="street-address" />
       </div>
 
       <div class="field">
         <label for="ville">Ville</label>
-        <input type="text" id="ville" name="ville" placeholder="Bruxelles" />
+        <input type="text" id="ville" name="ville" placeholder="Bruxelles" autocomplete="address-level2" />
       </div>
 
       <div class="field">
         <label for="code-postal">Code postal</label>
-        <input type="text" id="code-postal" name="code_postal" placeholder="1000" />
+        <input type="text" id="code-postal" name="code_postal" placeholder="1000" autocomplete="postal-code" inputmode="numeric" />
       </div>
 
       <div class="field full">
@@ -178,8 +183,10 @@
         <button type="reset" class="btn-reset">Réinitialiser</button>
       </div>
 
+      <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+
       <p class="form-note">
-        Vos données sont traitées de manière confidentielle et ne sont jamais partagées.
+        Site de démonstration : aucune commande n'est réellement envoyée et aucune donnée n'est enregistrée.
       </p>
 
     </form>
@@ -188,7 +195,7 @@
   
   <footer id="site-footer">
     <span class="footer-copy">© 2026 — Maison Oud</span>
-    <span class="footer-logo">M · O</span>
+    <span class="footer-logo" aria-hidden="true">M · O</span>
     <span class="footer-right">Parfum d'Exception</span>
   </footer>
 
