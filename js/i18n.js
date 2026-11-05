@@ -151,6 +151,7 @@
   var LANGS = ['fr', 'en', 'nl'];
   var OG = { fr: 'fr_BE', en: 'en_GB', nl: 'nl_BE' };
   var current = 'fr';
+  var NAMES = { fr: 'français', en: 'English', nl: 'Nederlands' };
 
   // Texte d'une clé dans la langue active (repli : français)
   window.T = function (key, fallback) {
@@ -194,29 +195,53 @@
     setMeta('meta[property="og:title"]', 'content', T('meta.title'));
     setMeta('meta[property="og:locale"]', 'content', OG[lang]);
 
-    document.querySelectorAll('.lang button').forEach(function (b) {
+    document.querySelectorAll('.lang-menu button').forEach(function (b) {
       b.setAttribute('aria-pressed', b.getAttribute('data-lang') === lang ? 'true' : 'false');
     });
+    var cur = document.querySelector('.lang-cur');
+    if (cur) cur.textContent = lang.toUpperCase();
+    var lb = document.querySelector('.lang-btn');
+    if (lb) lb.setAttribute('aria-label', T('aria.lang') + ' : ' + NAMES[lang]);
     document.dispatchEvent(new CustomEvent('langchange', { detail: lang }));
   }
 
-  // Langue de départ : lien ?lang=en > choix déjà fait > langue du navigateur > français
+  // Langue de départ : français, sauf lien ?lang=en / ?lang=nl ou choix déjà fait par le visiteur
   function initial() {
     var m = /[?&]lang=(fr|en|nl)\b/.exec(location.search);
     if (m) return m[1];
     try { var saved = localStorage.getItem('lang'); if (LANGS.indexOf(saved) !== -1) return saved; } catch (e) {}
-    var nav = (navigator.languages && navigator.languages[0]) || navigator.language || 'fr';
-    nav = nav.slice(0, 2).toLowerCase();
-    return LANGS.indexOf(nav) !== -1 ? nav : 'fr';
+    return 'fr';
   }
 
-  document.querySelectorAll('.lang button').forEach(function (b) {
-    b.addEventListener('click', function () {
-      var lang = b.getAttribute('data-lang');
-      try { localStorage.setItem('lang', lang); } catch (e) {}
-      apply(lang);
+  // Bouton de langue : un clic ouvre la liste FR / EN / NL
+  var box = document.querySelector('.lang');
+  var btn = document.querySelector('.lang-btn');
+  var menu = document.getElementById('lang-menu');
+  function setOpen(open) {
+    if (!btn || !menu) return;
+    menu.hidden = !open;
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  if (btn && menu) {
+    btn.addEventListener('click', function () {
+      var open = menu.hidden;
+      setOpen(open);
+      if (open) { var on = menu.querySelector('[aria-pressed="true"]'); if (on) on.focus(); }
     });
-  });
+    menu.querySelectorAll('button').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var lang = b.getAttribute('data-lang');
+        try { localStorage.setItem('lang', lang); } catch (e) {}
+        apply(lang);
+        setOpen(false);
+        btn.focus();
+      });
+    });
+    document.addEventListener('click', function (e) { if (!box.contains(e.target)) setOpen(false); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !menu.hidden) { setOpen(false); btn.focus(); }
+    });
+  }
 
   apply(initial());
 })();

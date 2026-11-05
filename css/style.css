@@ -58,13 +58,19 @@ nav.main a:hover{border-color:var(--ink)}
 .tools{display:flex;align-items:center;gap:10px}
 .icon-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:44px;min-height:44px;background:none;border:1px solid var(--rule);color:var(--ink);font:inherit;cursor:pointer;padding:0 12px}
 .icon-btn svg{width:18px;height:18px}
-/* Sélecteur de langue FR / EN / NL */
-.lang{display:flex;border:1px solid var(--rule)}
-.lang button{min-width:40px;min-height:44px;padding:0 8px;background:none;border:0;color:var(--ink-2);font:inherit;letter-spacing:.08em;cursor:pointer;transition:color .2s,background .2s}
-.lang button+button{border-left:1px solid color-mix(in srgb,var(--rule) 25%,transparent)}
-.lang button:hover{color:var(--ink)}
-.lang button[aria-pressed="true"]{color:var(--paper);background:var(--ink)}
-@media (max-width:420px){.lang button{min-width:34px;padding:0 4px}.tools{gap:6px}}
+/* Sélecteur de langue : un bouton qui ouvre FR / EN / NL */
+.lang{position:relative}
+.lang-btn{letter-spacing:.08em;gap:4px}
+.lang-btn svg{width:14px;height:14px;transition:transform .2s}
+.lang-btn[aria-expanded="true"] svg{transform:rotate(180deg)}
+.lang-menu{position:absolute;right:0;top:calc(100% + 6px);z-index:40;min-width:180px;margin:0;padding:0;list-style:none;background:var(--paper);border:1px solid var(--rule)}
+.lang-menu[hidden]{display:none}
+.lang-menu li+li{border-top:1px solid color-mix(in srgb,var(--rule) 20%,transparent)}
+.lang-menu button{display:flex;align-items:center;gap:12px;width:100%;min-height:44px;padding:0 14px;background:none;border:0;color:var(--ink);font:inherit;letter-spacing:.08em;text-align:left;cursor:pointer}
+.lang-menu button span{color:var(--ink-2);min-width:2ch}
+.lang-menu button:hover,.lang-menu button:focus-visible{background:var(--paper-2)}
+.lang-menu button[aria-pressed="true"]{color:var(--accent)}
+.lang-menu button[aria-pressed="true"] span{color:var(--accent)}
 .menu-btn{display:none}
 
 /* Couverture */

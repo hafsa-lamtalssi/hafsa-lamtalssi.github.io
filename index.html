@@ -81,8 +81,16 @@
       </ul>
     </nav>
     <div class="tools">
-      <div class="lang mono" role="group" aria-label="Langue" data-i18n-aria="aria.lang">
-        <button type="button" data-lang="fr" lang="fr" aria-pressed="true">FR</button><button type="button" data-lang="en" lang="en" aria-pressed="false">EN</button><button type="button" data-lang="nl" lang="nl" aria-pressed="false">NL</button>
+      <div class="lang mono">
+        <button class="icon-btn lang-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="lang-menu" aria-label="Langue : français">
+          <span class="lang-cur">FR</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <ul class="lang-menu" id="lang-menu" hidden>
+          <li><button type="button" data-lang="fr" lang="fr" aria-pressed="true"><span>FR</span> Français</button></li>
+          <li><button type="button" data-lang="en" lang="en" aria-pressed="false"><span>EN</span> English</button></li>
+          <li><button type="button" data-lang="nl" lang="nl" aria-pressed="false"><span>NL</span> Nederlands</button></li>
+        </ul>
       </div>
       <button class="icon-btn theme-btn" type="button" aria-label="Mode sombre" aria-pressed="false">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor"/></svg>
