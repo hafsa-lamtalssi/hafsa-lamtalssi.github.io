@@ -180,6 +180,7 @@
 .fleur-card.large .fleur-desc { flex: 0; }
 .fleur-card.large .fleur-nom { font-size: 34px; }
 .fleur-card.large .fleur-latin { font-size: 44px; }
+.fleur-card.large .fleur-img:has(.illu) .fleur-latin { font-size: 15px; }
 
 /* La dernière grande carte occupe toute la ligne (pas de trou dans la grille) */
 .fleur-card.large.pleine { grid-column: 1 / -1; }
