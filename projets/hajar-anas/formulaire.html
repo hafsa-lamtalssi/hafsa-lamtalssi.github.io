@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hajar &amp; Anas — Commander</title>
+  <meta name="description" content="Composez et commandez votre bouquet Hajar &amp; Anas : choix des fleurs, nombre de tiges, options et livraison à Bruxelles." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&amp;family=Jost:wght@200;300;400&amp;display=swap" />
+  <link rel="stylesheet" href="css/commun.css" />
+  <link rel="stylesheet" href="css/formulaire.css" />
+</head>
+<body>
+
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<nav id="main-nav" aria-label="Navigation principale">
+  <a id="logo" href="index.html" aria-label="Hajar et Anas, accueil">
+    <span class="logo-nom">Hajar <em>&amp; Anas</em></span>
+    <span class="logo-sub">Bouquets sur mesure</span>
+  </a>
+  <ul class="nav-links" id="menu">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="galerie.html">Fleurs</a></li>
+    <li><a href="formulaire.html" class="active" aria-current="page">Commander</a></li>
+    <li><a href="index.html#pourquoi">À propos</a></li>
+  </ul>
+  <a href="formulaire.html" class="nav-cta">Mon bouquet</a>
+  <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<header id="hero">
+  <p class="eyebrow">Votre commande</p>
+  <h1>Composez votre <em>bouquet</em></h1>
+  <p>Choisissez vos fleurs, personnalisez le nombre de tiges et
+     laissez-nous créer votre bouquet unique. Livraison le jour même.</p>
+</header>
+
+<main id="contenu">
+
+<div id="etapes">
+  <ol class="etapes-row">
+    <li class="etape">
+      <span class="etape-num" aria-hidden="true">01</span>
+      <div class="etape-text">
+        <span class="etape-titre">Choisissez vos fleurs</span>
+        <span class="etape-desc">Sélectionnez parmi notre catalogue</span>
+      </div>
+    </li>
+    <li class="etape">
+      <span class="etape-num" aria-hidden="true">02</span>
+      <div class="etape-text">
+        <span class="etape-titre">Définissez les tiges</span>
+        <span class="etape-desc">Ajustez les quantités librement</span>
+      </div>
+    </li>
+    <li class="etape">
+      <span class="etape-num" aria-hidden="true">03</span>
+      <div class="etape-text">
+        <span class="etape-titre">Livraison</span>
+        <span class="etape-desc">Chez vous le jour même</span>
+      </div>
+    </li>
+  </ol>
+</div>
+
+<section id="form-section" aria-label="Formulaire de commande">
+  <div class="form-layout">
+
+    <form id="commande" action="#" method="post" enctype="multipart/form-data" novalidate>
+
+      <p class="form-bloc-titre">Vos coordonnées</p>
+      <div class="fields-row">
+        <div class="field">
+          <label for="prenom">Prénom</label>
+          <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" autocomplete="given-name" required />
+        </div>
+        <div class="field">
+          <label for="nom">Nom</label>
+          <input type="text" id="nom" name="nom" placeholder="Votre nom" autocomplete="family-name" required />
+        </div>
+        <div class="field">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="votre@email.com" autocomplete="email" required />
+        </div>
+        <div class="field">
+          <label for="tel">Téléphone</label>
+          <input type="tel" id="tel" name="tel" placeholder="+32 · · · · · · · ·" autocomplete="tel" />
+        </div>
+        <div class="field">
+          <label for="naissance">Date de naissance <span class="aide">(pour une surprise d'anniversaire)</span></label>
+          <input type="date" id="naissance" name="naissance" autocomplete="bday" />
+        </div>
+        <div class="field">
+          <label for="password">Mot de passe <span class="aide">(pour créer votre compte)</span></label>
+          <input type="password" id="password" name="password" placeholder="· · · · · · · ·" autocomplete="new-password" minlength="8" />
+        </div>
+      </div>
+
+      <p class="form-bloc-titre">Votre bouquet</p>
+
+      <div class="compteurs-grid">
+        <div class="compteur-item" data-fleur="rose">
+          <span class="compteur-pastille teinte-rose" aria-hidden="true">R</span>
+          <span class="compteur-nom" id="lbl-rose">Rose <small>2,50 € / tige</small></span>
+          <div class="compteur-ctrl">
+            <button type="button" data-delta="-1" aria-label="Retirer une rose">−</button>
+            <input class="compteur-val" type="number" name="tiges_rose" value="5" min="0" max="50" aria-labelledby="lbl-rose" />
+            <button type="button" data-delta="1" aria-label="Ajouter une rose">+</button>
+          </div>
+        </div>
+        <div class="compteur-item" data-fleur="tulipe">
+          <span class="compteur-pastille teinte-tulipe" aria-hidden="true">T</span>
+          <span class="compteur-nom" id="lbl-tulipe">Tulipe <small>1,80 € / tige</small></span>
+          <div class="compteur-ctrl">
+            <button type="button" data-delta="-1" aria-label="Retirer une tulipe">−</button>
+            <input class="compteur-val" type="number" name="tiges_tulipe" value="0" min="0" max="50" aria-labelledby="lbl-tulipe" />
+            <button type="button" data-delta="1" aria-label="Ajouter une tulipe">+</button>
+          </div>
+        </div>
+        <div class="compteur-item" data-fleur="pivoine">
+          <span class="compteur-pastille teinte-pivoine" aria-hidden="true">P</span>
+          <span class="compteur-nom" id="lbl-pivoine">Pivoine <small>3,20 € / tige</small></span>
+          <div class="compteur-ctrl">
+            <button type="button" data-delta="-1" aria-label="Retirer une pivoine">−</button>
+            <input class="compteur-val" type="number" name="tiges_pivoine" value="0" min="0" max="50" aria-labelledby="lbl-pivoine" />
+            <button type="button" data-delta="1" aria-label="Ajouter une pivoine">+</button>
+          </div>
+        </div>
+        <div class="compteur-item" data-fleur="lys">
+          <span class="compteur-pastille teinte-lys" aria-hidden="true">L</span>
+          <span class="compteur-nom" id="lbl-lys">Lys <small>2,90 € / tige</small></span>
+          <div class="compteur-ctrl">
+            <button type="button" data-delta="-1" aria-label="Retirer un lys">−</button>
+            <input class="compteur-val" type="number" name="tiges_lys" value="0" min="0" max="50" aria-labelledby="lbl-lys" />
+            <button type="button" data-delta="1" aria-label="Ajouter un lys">+</button>
+          </div>
+        </div>
+        <div class="compteur-item" data-fleur="tournesol">
+          <span class="compteur-pastille teinte-tournesol" aria-hidden="true">T</span>
+          <span class="compteur-nom" id="lbl-tournesol">Tournesol <small>1,60 € / tige</small></span>
+          <div class="compteur-ctrl">
+            <button type="button" data-delta="-1" aria-label="Retirer un tournesol">−</button>
+            <input class="compteur-val" type="number" name="tiges_tournesol" value="0" min="0" max="50" aria-labelledby="lbl-tournesol" />
+            <button type="button" data-delta="1" aria-label="Ajouter un tournesol">+</button>
+          </div>
+        </div>
+        <div class="compteur-item" data-fleur="orchidee">
+          <span class="compteur-pastille teinte-orchidee" aria-hidden="true">O</span>
+          <span class="compteur-nom" id="lbl-orchidee">Orchidée <small>4,50 € / tige</small></span>
+          <div class="compteur-ctrl">
+            <button type="button" data-delta="-1" aria-label="Retirer une orchidée">−</button>
+            <input class="compteur-val" type="number" name="tiges_orchidee" value="0" min="0" max="50" aria-labelledby="lbl-orchidee" />
+            <button type="button" data-delta="1" aria-label="Ajouter une orchidée">+</button>
+          </div>
+        </div>
+        <div class="compteur-item" data-fleur="marguerite">
+          <span class="compteur-pastille teinte-marguerite" aria-hidden="true">M</span>
+          <span class="compteur-nom" id="lbl-marguerite">Marguerite <small>1,20 € / tige</small></span>
+          <div class="compteur-ctrl">
+            <button type="button" data-delta="-1" aria-label="Retirer une marguerite">−</button>
+            <input class="compteur-val" type="number" name="tiges_marguerite" value="0" min="0" max="50" aria-labelledby="lbl-marguerite" />
+            <button type="button" data-delta="1" aria-label="Ajouter une marguerite">+</button>
+          </div>
+        </div>
+        <div class="compteur-item" data-fleur="hibiscus">
+          <span class="compteur-pastille teinte-hibiscus" aria-hidden="true">H</span>
+          <span class="compteur-nom" id="lbl-hibiscus">Hibiscus <small>2,10 € / tige</small></span>
+          <div class="compteur-ctrl">
+            <button type="button" data-delta="-1" aria-label="Retirer un hibiscus">−</button>
+            <input class="compteur-val" type="number" name="tiges_hibiscus" value="0" min="0" max="50" aria-labelledby="lbl-hibiscus" />
+            <button type="button" data-delta="1" aria-label="Ajouter un hibiscus">+</button>
+          </div>
+        </div>
+        <div class="compteur-item" data-fleur="feuillage">
+          <span class="compteur-pastille teinte-feuillage" aria-hidden="true">F</span>
+          <span class="compteur-nom" id="lbl-feuillage">Feuillage <small>0,80 € / tige</small></span>
+          <div class="compteur-ctrl">
+            <button type="button" data-delta="-1" aria-label="Retirer une tige de feuillage">−</button>
+            <input class="compteur-val" type="number" name="tiges_feuillage" value="0" min="0" max="50" aria-labelledby="lbl-feuillage" />
+            <button type="button" data-delta="1" aria-label="Ajouter une tige de feuillage">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="slider-wrap">
+        <label class="slider-label" for="taille-bouquet">Taille souhaitée du bouquet</label>
+        <output class="taille-valeur" for="taille-bouquet" id="taille-bouquet-valeur">20 tiges — <em>Moyen</em></output>
+        <input type="range" id="taille-bouquet" name="taille" min="5" max="80" value="20" />
+        <div class="slider-vals">
+          <span>5 tiges</span>
+          <span>Petit · Moyen · Grand · Luxe</span>
+          <span>80 tiges</span>
+        </div>
+      </div>
+
+      <p class="form-bloc-titre">Options</p>
+      <div class="fields-row">
+
+        <fieldset class="field">
+          <legend>Emballage</legend>
+          <div class="check-group">
+            <label class="check-item">
+              <input type="radio" name="emballage" value="kraft" checked />
+              <span>Papier kraft naturel</span>
+            </label>
+            <label class="check-item">
+              <input type="radio" name="emballage" value="satin" />
+              <span>Ruban satin rose</span>
+            </label>
+            <label class="check-item">
+              <input type="radio" name="emballage" value="luxe" />
+              <span>Boîte luxe dorée</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="field">
+          <legend>Extras</legend>
+          <div class="check-group">
+            <label class="check-item">
+              <input type="checkbox" name="carte" value="carte" />
+              <span>Carte message personnalisée</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox" name="eau" value="eau" />
+              <span>Flacon d'eau fraîche</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox" name="newsletter" value="newsletter" />
+              <span>S'inscrire aux offres</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="field">
+          <label for="occasion">Occasion</label>
+          <select id="occasion" name="occasion" required>
+            <option value="" disabled selected>Choisir une occasion</option>
+            <option value="anniversaire">Anniversaire</option>
+            <option value="mariage">Mariage</option>
+            <option value="naissance">Naissance</option>
+            <option value="deuil">Condoléances</option>
+            <option value="amour">Déclaration d'amour</option>
+            <option value="autre">Autre</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="heure">Heure de livraison souhaitée</label>
+          <input type="time" id="heure" name="heure" min="09:00" max="21:00" />
+        </div>
+
+      </div>
+
+      <p class="form-bloc-titre">Livraison</p>
+      <div class="fields-row">
+        <div class="field full">
+          <label for="adresse">Adresse</label>
+          <input type="text" id="adresse" name="adresse" placeholder="Rue et numéro" autocomplete="street-address" required />
+        </div>
+        <div class="field">
+          <label for="ville">Ville</label>
+          <input type="text" id="ville" name="ville" placeholder="Bruxelles" autocomplete="address-level2" />
+        </div>
+        <div class="field">
+          <label for="cp">Code postal</label>
+          <input type="text" id="cp" name="cp" placeholder="1000" autocomplete="postal-code" inputmode="numeric" maxlength="4" />
+        </div>
+        <div class="field full">
+          <label for="message">Message à joindre au bouquet</label>
+          <textarea id="message" name="message"
+                    placeholder="Écrivez votre message…"></textarea>
+        </div>
+        <div class="field full">
+          <label for="photo">Photo d'inspiration (optionnel)</label>
+          <input type="file" id="photo" name="photo" accept="image/*" />
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn-submit">Confirmer la commande</button>
+        <button type="reset" class="btn-reset">Réinitialiser</button>
+      </div>
+      <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+      <p class="form-note">Site de démonstration : aucune commande n'est réellement envoyée et aucune donnée n'est enregistrée.</p>
+
+    </form>
+
+    <!-- Récapitulatif mis à jour en direct par script.js -->
+    <aside class="recap-box" aria-labelledby="recap-titre">
+      <p class="recap-titre" id="recap-titre">Votre bouquet</p>
+
+      <ul class="recap-lignes" id="recap-lignes">
+        <li class="recap-ligne">
+          <span class="recap-fleur"><em>Rose</em> × 5</span>
+          <span class="recap-prix">12,50 €</span>
+        </li>
+      </ul>
+
+      <p class="recap-tiges"><span>Tiges choisies</span><span id="recap-tiges">5</span></p>
+
+      <div class="recap-total">
+        <span class="recap-total-label">Total estimé</span>
+        <span class="recap-total-prix" id="recap-total" aria-live="polite">12,50 €</span>
+      </div>
+
+      <div class="recap-livraison">
+        <p id="recap-livraison">Encore 17,50 € pour la livraison offerte (dès 30 €).</p>
+        <div class="recap-jauge" aria-hidden="true"><span id="recap-jauge"></span></div>
+        <p>Commande avant 14h → livraison le soir même.</p>
+      </div>
+    </aside>
+
+  </div>
+</section>
+
+</main>
+
+<footer id="site-footer">
+  <span class="footer-logo">Hajar <em>&amp; Anas</em></span>
+  <ul class="footer-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="galerie.html">Fleurs</a></li>
+    <li><a href="formulaire.html">Commander</a></li>
+    <li><a href="formulaire.html#commande">Contact</a></li>
+  </ul>
+  <span class="footer-copy">© 2026 — Hajar &amp; Anas · Bruxelles</span>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

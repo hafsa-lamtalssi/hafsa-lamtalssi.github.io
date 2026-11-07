@@ -1,0 +1,415 @@
+/* Hajar & Anas — page d'accueil (les styles communs sont dans commun.css) */
+
+/* ════════════════════════════════
+   HERO
+════════════════════════════════ */
+#hero {
+  min-height: 82vh;
+  display: flex;
+  align-items: center;
+  padding: 80px 5%;
+  position: relative;
+  overflow: hidden;
+  background: var(--fond);
+}
+
+/* Halo rose et cercle fin en position absolue */
+#hero::before {
+  content: '';
+  position: absolute;
+  right: -80px; top: 50%;
+  transform: translateY(-50%);
+  width: 520px; height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,123,138,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+#hero::after {
+  content: '';
+  position: absolute;
+  right: 60px; top: 50%;
+  transform: translateY(-50%);
+  width: 360px; height: 360px;
+  border-radius: 50%;
+  border: 1px solid rgba(201,123,138,0.25);
+  pointer-events: none;
+}
+
+.hero-content { max-width: 560px; position: relative; z-index: 1; }
+
+.hero-eyebrow { margin-bottom: 24px; }
+
+#hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(52px, 7vw, 86px);
+  font-weight: 300;
+  line-height: 0.95;
+  color: var(--texte);
+  margin-bottom: 32px;
+}
+
+#hero h1 em { font-style: italic; color: var(--rose-fonce); display: block; }
+
+.hero-divider { width: 60px; height: 1px; background: var(--rose-dim); margin-bottom: 28px; }
+
+#hero p {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.9;
+  max-width: 420px;
+  margin-bottom: 40px;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--texte);
+  padding: 8px 0;
+  transition: gap 0.4s, color 0.3s;
+}
+
+.hero-cta:hover { gap: 26px; color: var(--rose-fonce); }
+
+.hero-cta span {
+  display: block;
+  width: 50px; height: 1px;
+  background: var(--rose);
+  transition: width 0.4s;
+}
+
+.hero-cta:hover span { width: 70px; }
+
+/* ════════════════════════════════
+   EN-TÊTES DE SECTION
+════════════════════════════════ */
+#fleurs,
+#pourquoi { padding: 100px 5%; background: var(--blanc); }
+
+.section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 56px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.section-eyebrow { margin-bottom: 12px; }
+
+.section-head h2,
+#configurateur h2 {
+  font-family: var(--serif);
+  font-size: clamp(34px, 4vw, 48px);
+  font-weight: 300;
+  color: var(--texte);
+  line-height: 1.1;
+}
+
+.section-head h2 em,
+#configurateur h2 em { font-style: italic; color: var(--rose-fonce); }
+
+.section-link {
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  transition: color 0.3s, gap 0.3s;
+  white-space: nowrap;
+}
+
+.section-link::after { content: '→'; }
+.section-link:hover { color: var(--rose-fonce); gap: 16px; }
+
+/* ════════════════════════════════
+   NOS FLEURS (4 cartes)
+════════════════════════════════ */
+.fleurs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.fleur-card {
+  background: var(--fond);
+  border: 1px solid var(--sep);
+  overflow: hidden;
+  position: relative;
+  transition: border-color 0.4s, transform 0.4s;
+}
+
+.fleur-card:hover { border-color: rgba(201,123,138,0.45); transform: translateY(-4px); }
+
+.fleur-card .fleur-img { height: 200px; }
+.fleur-card:hover .fleur-img img { transform: scale(1.06); }
+
+.fleur-body { padding: 18px 18px 22px; }
+
+.fleur-nom {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--texte);
+  margin-bottom: 4px;
+}
+
+/* Le lien du titre rend toute la carte cliquable */
+.fleur-nom a { color: inherit; text-decoration: none; }
+.fleur-nom a::after { content: ''; position: absolute; inset: 0; z-index: 4; }
+
+.fleur-desc { font-size: 14px; color: var(--muted); margin-bottom: 12px; line-height: 1.7; }
+
+.fleur-prix { font-family: var(--serif); font-size: 18px; color: var(--rose-fonce); letter-spacing: 1px; }
+
+/* ════════════════════════════════
+   CONFIGURATEUR
+════════════════════════════════ */
+#configurateur { padding: 100px 5%; background: var(--fond); }
+
+#configurateur h2 { margin-bottom: 10px; }
+
+#configurateur h2::after {
+  content: '';
+  display: block;
+  width: 36px; height: 1px;
+  background: var(--rose-dim);
+  margin-top: 14px;
+  margin-bottom: 30px;
+}
+
+#configurateur > p { color: var(--muted); max-width: 520px; margin-bottom: 40px; }
+
+.config-fleurs {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 12px;
+  margin-bottom: 36px;
+  list-style: none;
+}
+
+.config-fleur {
+  width: 100%;
+  border: 1px solid var(--sep);
+  background: var(--blanc);
+  padding: 20px 12px 16px;
+  text-align: center;
+  cursor: pointer;
+  font-family: var(--sans);
+  color: var(--texte);
+  transition: border-color 0.3s, background 0.3s;
+  position: relative;
+}
+
+.config-fleur:hover { border-color: rgba(201,123,138,0.50); background: var(--rose-pale); }
+
+.config-fleur[aria-pressed="true"] { border-color: var(--rose-fonce); background: var(--rose-pale); }
+
+/* Coche de la fleur choisie */
+.config-fleur[aria-pressed="true"]::after {
+  content: '✓';
+  position: absolute;
+  top: 6px; right: 10px;
+  font-size: 13px;
+  color: var(--rose-fonce);
+}
+
+.config-pastille {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px; height: 48px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  background: var(--teinte);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 22px;
+  color: rgba(42,31,31,0.65);
+}
+
+.config-fleur-nom { display: block; font-family: var(--serif); font-size: 17px; margin-bottom: 2px; }
+.config-fleur-prix { display: block; font-size: 12px; color: var(--rose-fonce); letter-spacing: 1px; }
+
+/* Compteurs */
+.compteur-wrap {
+  background: var(--blanc);
+  border: 1px solid var(--sep);
+  padding: 32px 36px;
+  margin-bottom: 32px;
+}
+
+.compteur-titre {
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--rose-fonce);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.compteur-titre::before {
+  content: '';
+  display: inline-block;
+  width: 16px; height: 1px;
+  background: var(--rose-dim);
+}
+
+.compteur-row { display: flex; flex-wrap: wrap; gap: 28px 32px; align-items: flex-start; }
+
+.compteur-item { display: flex; flex-direction: column; gap: 10px; min-width: 140px; }
+.compteur-item[hidden] { display: none; }
+
+.compteur-label { font-size: 14px; color: var(--muted); }
+
+.compteur-vide { font-size: 14px; color: var(--muted); }
+
+.range-wrap { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--sep); }
+
+.range-label {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: block;
+}
+
+.range-vals { display: flex; justify-content: space-between; gap: 10px; margin-top: 4px; }
+.range-vals span { font-size: 12px; color: var(--muted); }
+
+/* Bandeau récapitulatif */
+.config-recap {
+  background: var(--texte);
+  padding: 28px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.recap-text { font-family: var(--serif); font-size: 22px; font-weight: 300; color: var(--creme); }
+.recap-text em { font-style: italic; color: #e3b3bc; }
+
+.btn-commander {
+  display: inline-block;
+  padding: 15px 36px;
+  background: var(--rose-fonce);
+  color: var(--blanc);
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn-commander:hover { background: var(--rose); }
+
+.btn-commander[aria-disabled="true"] { opacity: 0.5; pointer-events: none; }
+
+/* ════════════════════════════════
+   POURQUOI NOUS
+════════════════════════════════ */
+.atouts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+
+.atout {
+  padding: 40px 32px;
+  border: 1px solid var(--sep);
+  position: relative;
+  transition: border-color 0.4s;
+}
+
+/* Trait rose qui se déploie au survol */
+.atout::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 0; height: 2px;
+  background: var(--rose);
+  transition: width 0.5s;
+}
+
+.atout:hover { border-color: rgba(201,123,138,0.40); }
+.atout:hover::before { width: 100%; }
+
+.atout-num {
+  display: block;
+  font-family: var(--serif);
+  font-size: 30px;
+  font-style: italic;
+  color: var(--rose);
+  line-height: 1;
+  margin-bottom: 18px;
+}
+
+.atout h3 { font-family: var(--serif); font-size: 24px; font-weight: 300; color: var(--texte); margin-bottom: 10px; }
+.atout p { font-size: 14px; color: var(--muted); line-height: 1.9; }
+
+/* ════════════════════════════════
+   VIDÉO
+════════════════════════════════ */
+#video-section { padding: 100px 5%; background: var(--fond); border-top: 1px solid var(--sep); }
+
+.video-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 1px solid var(--sep);
+  background: var(--texte);
+}
+
+.video-wrap video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ════════════════════════════════
+   RESPONSIVE
+════════════════════════════════ */
+@media (max-width: 1100px) {
+  .config-fleurs { grid-template-columns: repeat(5, 1fr); }
+}
+
+@media (max-width: 860px) {
+  #hero { padding: 64px 6%; min-height: auto; }
+  #hero::after { display: none; }
+
+  .fleurs-grid { grid-template-columns: repeat(2, 1fr); }
+  .atouts { grid-template-columns: 1fr 1fr; }
+
+  #fleurs, #pourquoi, #configurateur, #video-section { padding: 72px 5%; }
+}
+
+@media (max-width: 480px) {
+  #hero { padding: 48px 5%; }
+
+  .fleurs-grid { grid-template-columns: 1fr; }
+  .config-fleurs { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .config-fleur { padding: 14px 4px 12px; }
+  .atouts { grid-template-columns: 1fr; }
+
+  .section-head { flex-direction: column; align-items: flex-start; }
+
+  .compteur-wrap { padding: 24px 20px; }
+  .compteur-row { gap: 20px; }
+  .compteur-item { min-width: 130px; }
+  .range-vals span:nth-child(2) { display: none; }
+  .config-recap { flex-direction: column; align-items: stretch; padding: 24px 20px; }
+  .btn-commander { text-align: center; }
+}

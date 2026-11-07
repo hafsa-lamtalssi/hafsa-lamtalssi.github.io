@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hajar &amp; Anas — Bouquets sur mesure</title>
+  <meta name="description" content="Hajar &amp; Anas, fleuriste à Bruxelles : composez votre bouquet sur mesure, tige par tige, livré le jour même." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&amp;family=Jost:wght@200;300;400&amp;display=swap" />
+  <link rel="stylesheet" href="css/commun.css" />
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<nav id="main-nav" aria-label="Navigation principale">
+  <a id="logo" href="index.html" aria-label="Hajar et Anas, accueil">
+    <span class="logo-nom">Hajar <em>&amp; Anas</em></span>
+    <span class="logo-sub">Bouquets sur mesure</span>
+  </a>
+
+  <ul class="nav-links" id="menu">
+    <li><a href="index.html" class="active" aria-current="page">Accueil</a></li>
+    <li><a href="galerie.html">Fleurs</a></li>
+    <li><a href="formulaire.html">Commander</a></li>
+    <li><a href="index.html#pourquoi">À propos</a></li>
+  </ul>
+
+  <a href="formulaire.html" class="nav-cta">Mon bouquet</a>
+
+  <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<header id="hero">
+  <div class="hero-content">
+    <p class="hero-eyebrow">Bouquets artisanaux</p>
+    <h1>Composez<br /><em>vos fleurs</em></h1>
+    <div class="hero-divider"></div>
+    <p>Choisissez vos fleurs, définissez le nombre de tiges,
+       créez un bouquet unique. Livraison à domicile
+       le jour même à Bruxelles.</p>
+    <a href="#configurateur" class="hero-cta">
+      <span></span>
+      Créer mon bouquet
+    </a>
+  </div>
+</header>
+
+<main id="contenu">
+
+<section id="fleurs" aria-labelledby="titre-fleurs">
+  <div class="section-head">
+    <div>
+      <p class="section-eyebrow">Sélection du moment</p>
+      <h2 id="titre-fleurs">Nos <em>fleurs</em></h2>
+    </div>
+    <a href="galerie.html" class="section-link">Voir tout</a>
+  </div>
+
+  <div class="fleurs-grid">
+
+    <article class="fleur-card">
+      <div class="fleur-img teinte-rose">
+        <span class="fleur-badge">Nouveau</span>
+        <span class="fleur-latin" aria-hidden="true">Rosa</span>
+      </div>
+      <div class="fleur-body">
+        <h3 class="fleur-nom"><a href="galerie.html">Rose rouge</a></h3>
+        <p class="fleur-desc">La classique. Veloutée, intense, intemporelle.</p>
+        <span class="fleur-prix">2,50 € / tige</span>
+      </div>
+    </article>
+
+    <article class="fleur-card">
+      <div class="fleur-img teinte-tulipe">
+        <span class="fleur-latin" aria-hidden="true">Tulipa</span>
+      </div>
+      <div class="fleur-body">
+        <h3 class="fleur-nom"><a href="galerie.html">Tulipe</a></h3>
+        <p class="fleur-desc">Élégance printanière en rouge, jaune ou blanc.</p>
+        <span class="fleur-prix">1,80 € / tige</span>
+      </div>
+    </article>
+
+    <article class="fleur-card">
+      <div class="fleur-img teinte-pivoine">
+        <span class="fleur-badge">Saison</span>
+        <span class="fleur-latin" aria-hidden="true">Paeonia</span>
+      </div>
+      <div class="fleur-body">
+        <h3 class="fleur-nom"><a href="galerie.html">Pivoine</a></h3>
+        <p class="fleur-desc">Ronde, luxuriante et délicatement parfumée.</p>
+        <span class="fleur-prix">3,20 € / tige</span>
+      </div>
+    </article>
+
+    <article class="fleur-card">
+      <div class="fleur-img teinte-lys">
+        <span class="fleur-latin" aria-hidden="true">Lilium</span>
+      </div>
+      <div class="fleur-body">
+        <h3 class="fleur-nom"><a href="galerie.html">Lys blanc</a></h3>
+        <p class="fleur-desc">Pureté et prestige pour occasions spéciales.</p>
+        <span class="fleur-prix">2,90 € / tige</span>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section id="configurateur" aria-labelledby="titre-config">
+  <p class="section-eyebrow">Personnalisez</p>
+  <h2 id="titre-config">Votre <em>bouquet</em></h2>
+  <p>Sélectionnez vos fleurs puis ajustez le nombre de tiges
+     pour chacune. Votre bouquet unique sera préparé avec soin.</p>
+
+  <!-- Chaque bouton choisit ou retire une fleur du bouquet -->
+  <ul class="config-fleurs" aria-label="Choisir les fleurs du bouquet">
+    <li><button type="button" class="config-fleur teinte-rose" data-fleur="rose" aria-pressed="true"><span class="config-pastille" aria-hidden="true">R</span><span class="config-fleur-nom">Rose</span><span class="config-fleur-prix">2,50 €</span></button></li>
+    <li><button type="button" class="config-fleur teinte-tulipe" data-fleur="tulipe" aria-pressed="false"><span class="config-pastille" aria-hidden="true">T</span><span class="config-fleur-nom">Tulipe</span><span class="config-fleur-prix">1,80 €</span></button></li>
+    <li><button type="button" class="config-fleur teinte-pivoine" data-fleur="pivoine" aria-pressed="false"><span class="config-pastille" aria-hidden="true">P</span><span class="config-fleur-nom">Pivoine</span><span class="config-fleur-prix">3,20 €</span></button></li>
+    <li><button type="button" class="config-fleur teinte-lys" data-fleur="lys" aria-pressed="false"><span class="config-pastille" aria-hidden="true">L</span><span class="config-fleur-nom">Lys</span><span class="config-fleur-prix">2,90 €</span></button></li>
+    <li><button type="button" class="config-fleur teinte-tournesol" data-fleur="tournesol" aria-pressed="false"><span class="config-pastille" aria-hidden="true">T</span><span class="config-fleur-nom">Tournesol</span><span class="config-fleur-prix">1,60 €</span></button></li>
+    <li><button type="button" class="config-fleur teinte-orchidee" data-fleur="orchidee" aria-pressed="false"><span class="config-pastille" aria-hidden="true">O</span><span class="config-fleur-nom">Orchidée</span><span class="config-fleur-prix">4,50 €</span></button></li>
+    <li><button type="button" class="config-fleur teinte-marguerite" data-fleur="marguerite" aria-pressed="false"><span class="config-pastille" aria-hidden="true">M</span><span class="config-fleur-nom">Marguerite</span><span class="config-fleur-prix">1,20 €</span></button></li>
+    <li><button type="button" class="config-fleur teinte-hibiscus" data-fleur="hibiscus" aria-pressed="false"><span class="config-pastille" aria-hidden="true">H</span><span class="config-fleur-nom">Hibiscus</span><span class="config-fleur-prix">2,10 €</span></button></li>
+    <li><button type="button" class="config-fleur teinte-feuillage" data-fleur="feuillage" aria-pressed="false"><span class="config-pastille" aria-hidden="true">F</span><span class="config-fleur-nom">Feuillage</span><span class="config-fleur-prix">0,80 €</span></button></li>
+  </ul>
+
+  <div class="compteur-wrap">
+    <p class="compteur-titre">Nombre de tiges par fleur</p>
+
+    <div class="compteur-row">
+      <div class="compteur-item" data-fleur="rose">
+        <span class="compteur-label" id="lbl-rose">Rose</span>
+        <div class="compteur-ctrl">
+          <button type="button" data-delta="-1" aria-label="Retirer une rose">−</button>
+          <input class="compteur-val" type="number" name="rose" value="5" min="0" max="50" aria-labelledby="lbl-rose" />
+          <button type="button" data-delta="1" aria-label="Ajouter une rose">+</button>
+        </div>
+      </div>
+      <div class="compteur-item" data-fleur="tulipe">
+        <span class="compteur-label" id="lbl-tulipe">Tulipe</span>
+        <div class="compteur-ctrl">
+          <button type="button" data-delta="-1" aria-label="Retirer une tulipe">−</button>
+          <input class="compteur-val" type="number" name="tulipe" value="0" min="0" max="50" aria-labelledby="lbl-tulipe" />
+          <button type="button" data-delta="1" aria-label="Ajouter une tulipe">+</button>
+        </div>
+      </div>
+      <div class="compteur-item" data-fleur="pivoine">
+        <span class="compteur-label" id="lbl-pivoine">Pivoine</span>
+        <div class="compteur-ctrl">
+          <button type="button" data-delta="-1" aria-label="Retirer une pivoine">−</button>
+          <input class="compteur-val" type="number" name="pivoine" value="0" min="0" max="50" aria-labelledby="lbl-pivoine" />
+          <button type="button" data-delta="1" aria-label="Ajouter une pivoine">+</button>
+        </div>
+      </div>
+      <div class="compteur-item" data-fleur="lys">
+        <span class="compteur-label" id="lbl-lys">Lys</span>
+        <div class="compteur-ctrl">
+          <button type="button" data-delta="-1" aria-label="Retirer un lys">−</button>
+          <input class="compteur-val" type="number" name="lys" value="0" min="0" max="50" aria-labelledby="lbl-lys" />
+          <button type="button" data-delta="1" aria-label="Ajouter un lys">+</button>
+        </div>
+      </div>
+      <div class="compteur-item" data-fleur="tournesol">
+        <span class="compteur-label" id="lbl-tournesol">Tournesol</span>
+        <div class="compteur-ctrl">
+          <button type="button" data-delta="-1" aria-label="Retirer un tournesol">−</button>
+          <input class="compteur-val" type="number" name="tournesol" value="0" min="0" max="50" aria-labelledby="lbl-tournesol" />
+          <button type="button" data-delta="1" aria-label="Ajouter un tournesol">+</button>
+        </div>
+      </div>
+      <div class="compteur-item" data-fleur="orchidee">
+        <span class="compteur-label" id="lbl-orchidee">Orchidée</span>
+        <div class="compteur-ctrl">
+          <button type="button" data-delta="-1" aria-label="Retirer une orchidée">−</button>
+          <input class="compteur-val" type="number" name="orchidee" value="0" min="0" max="50" aria-labelledby="lbl-orchidee" />
+          <button type="button" data-delta="1" aria-label="Ajouter une orchidée">+</button>
+        </div>
+      </div>
+      <div class="compteur-item" data-fleur="marguerite">
+        <span class="compteur-label" id="lbl-marguerite">Marguerite</span>
+        <div class="compteur-ctrl">
+          <button type="button" data-delta="-1" aria-label="Retirer une marguerite">−</button>
+          <input class="compteur-val" type="number" name="marguerite" value="0" min="0" max="50" aria-labelledby="lbl-marguerite" />
+          <button type="button" data-delta="1" aria-label="Ajouter une marguerite">+</button>
+        </div>
+      </div>
+      <div class="compteur-item" data-fleur="hibiscus">
+        <span class="compteur-label" id="lbl-hibiscus">Hibiscus</span>
+        <div class="compteur-ctrl">
+          <button type="button" data-delta="-1" aria-label="Retirer un hibiscus">−</button>
+          <input class="compteur-val" type="number" name="hibiscus" value="0" min="0" max="50" aria-labelledby="lbl-hibiscus" />
+          <button type="button" data-delta="1" aria-label="Ajouter un hibiscus">+</button>
+        </div>
+      </div>
+      <div class="compteur-item" data-fleur="feuillage">
+        <span class="compteur-label" id="lbl-feuillage">Feuillage</span>
+        <div class="compteur-ctrl">
+          <button type="button" data-delta="-1" aria-label="Retirer une tige de feuillage">−</button>
+          <input class="compteur-val" type="number" name="feuillage" value="0" min="0" max="50" aria-labelledby="lbl-feuillage" />
+          <button type="button" data-delta="1" aria-label="Ajouter une tige de feuillage">+</button>
+        </div>
+      </div>
+      <p class="compteur-vide" hidden>Choisissez au moins une fleur ci-dessus.</p>
+    </div>
+
+    <div class="range-wrap">
+      <label class="range-label" for="total-tiges">Taille souhaitée du bouquet</label>
+      <output class="taille-valeur" for="total-tiges" id="total-tiges-valeur">20 tiges — <em>Moyen</em></output>
+      <input type="range" id="total-tiges" name="taille" min="5" max="80" value="20" />
+      <div class="range-vals">
+        <span>5 tiges</span>
+        <span>Petit · Moyen · Grand · Luxe</span>
+        <span>80 tiges</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="config-recap">
+    <p class="recap-text" id="recap-text" aria-live="polite">5 roses — bouquet <em>sur mesure</em></p>
+    <a href="formulaire.html?rose=5&amp;taille=20" class="btn-commander" id="btn-commander">Commander ce bouquet</a>
+  </div>
+
+</section>
+
+<section id="pourquoi" aria-labelledby="titre-pourquoi">
+  <div class="section-head">
+    <div>
+      <p class="section-eyebrow">Notre promesse</p>
+      <h2 id="titre-pourquoi">Pourquoi <em>nous</em> choisir</h2>
+    </div>
+  </div>
+
+  <div class="atouts">
+    <div class="atout">
+      <span class="atout-num" aria-hidden="true">01</span>
+      <h3>Fleurs fraîches</h3>
+      <p>Approvisionnement quotidien auprès de producteurs locaux
+         et des marchés de Bruxelles.</p>
+    </div>
+    <div class="atout">
+      <span class="atout-num" aria-hidden="true">02</span>
+      <h3>Sur mesure</h3>
+      <p>Chaque bouquet est composé à la demande, tige par tige,
+         selon vos envies et votre budget.</p>
+    </div>
+    <div class="atout">
+      <span class="atout-num" aria-hidden="true">03</span>
+      <h3>Livraison rapide</h3>
+      <p>Livraison le jour même dans tout Bruxelles.
+         Commandez avant 14h pour une livraison en soirée.</p>
+    </div>
+  </div>
+</section>
+
+<section id="video-section" aria-labelledby="titre-video">
+  <div class="section-head">
+    <div>
+      <p class="section-eyebrow">Notre univers</p>
+      <h2 id="titre-video">L'art du <em>bouquet</em></h2>
+    </div>
+  </div>
+  <div class="video-wrap">
+    <video controls poster="videos/atelier-poster.jpg" preload="metadata">
+      <source src="videos/atelier.mp4" type="video/mp4" />
+      Votre navigateur ne prend pas en charge la lecture vidéo intégrée.
+      Vous pouvez <a href="videos/atelier.mp4">télécharger la vidéo</a>.
+    </video>
+  </div>
+</section>
+
+</main>
+
+<footer id="site-footer">
+  <span class="footer-logo">Hajar <em>&amp; Anas</em></span>
+  <ul class="footer-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="galerie.html">Fleurs</a></li>
+    <li><a href="formulaire.html">Commander</a></li>
+    <li><a href="formulaire.html#commande">Contact</a></li>
+  </ul>
+  <span class="footer-copy">© 2026 — Hajar &amp; Anas · Bruxelles</span>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

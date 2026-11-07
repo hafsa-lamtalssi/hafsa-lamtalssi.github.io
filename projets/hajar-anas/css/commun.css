@@ -1,0 +1,450 @@
+/* Hajar & Anas — styles communs aux 3 pages
+   (couleurs, menu, burger, titres de section, compteurs, curseur, pied de page, responsive) */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* couleurs du site */
+:root {
+  --rose:       #c97b8a;   /* décoratif : traits, cercles, pastilles */
+  --rose-fonce: #a95466;   /* petits textes et boutons : contraste suffisant */
+  --rose-dim:   #8a4a57;
+  --rose-pale:  #fdf0f2;
+  --vert:       #3d5a3e;
+  --creme:      #fdf8f2;
+  --fond:       #faf5ef;
+  --blanc:      #ffffff;
+  --texte:      #2a1f1f;
+  --muted:      #6e5f5f;
+  --sep:        rgba(201,120,138,0.22);
+  --serif:      'Cormorant Garamond', Georgia, serif;
+  --sans:       'Jost', Arial, sans-serif;
+}
+
+/* Teinte propre à chaque fleur (remplace les emojis) */
+.teinte-rose       { --teinte: #f3dde1; }
+.teinte-tulipe     { --teinte: #f6e2d4; }
+.teinte-pivoine    { --teinte: #f7e3eb; }
+.teinte-lys        { --teinte: #f1eee6; }
+.teinte-tournesol  { --teinte: #f6ebcf; }
+.teinte-orchidee   { --teinte: #eee2ee; }
+.teinte-marguerite { --teinte: #f3f1e4; }
+.teinte-hibiscus   { --teinte: #f5dbd6; }
+.teinte-feuillage  { --teinte: #e2eadf; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--creme);
+  color: var(--texte);
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.8;
+  -webkit-text-size-adjust: 100%;
+}
+
+img, video { max-width: 100%; }
+
+/* Texte lu par les lecteurs d'écran mais invisible à l'écran */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Lien d'évitement pour la navigation au clavier */
+.skip {
+  position: absolute;
+  left: 12px; top: -60px;
+  z-index: 300;
+  background: var(--rose-fonce);
+  color: var(--blanc);
+  padding: 8px 14px;
+  font-size: 13px;
+  text-decoration: none;
+}
+.skip:focus { top: 12px; }
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--rose-fonce);
+  outline-offset: 3px;
+}
+
+/* ════════════════════════════════
+   MENU
+════════════════════════════════ */
+#main-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--blanc);
+  border-bottom: 1px solid var(--sep);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 5%;
+  height: 68px;
+}
+
+#logo { display: flex; flex-direction: column; text-decoration: none; gap: 2px; }
+
+.logo-nom {
+  font-family: var(--serif);
+  font-size: 23px;
+  font-weight: 300;
+  color: var(--texte);
+  letter-spacing: 2px;
+  line-height: 1.1;
+}
+
+.logo-nom em { font-style: italic; color: var(--rose-fonce); }
+
+.logo-sub {
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.logo-sub::before {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 1px;
+  background: var(--rose-dim);
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.nav-links { display: flex; list-style: none; }
+
+.nav-links a {
+  display: block;
+  padding: 12px 18px;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--muted);
+  transition: color 0.3s;
+  position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a.active { color: var(--rose-fonce); }
+
+/* Soulignement de la page active */
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 4px; left: 18px; right: 18px;
+  height: 1px;
+  background: var(--rose);
+}
+
+.nav-cta {
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--blanc);
+  background: var(--rose-fonce);
+  padding: 11px 22px;
+  white-space: nowrap;
+  transition: background 0.3s;
+}
+
+.nav-cta:hover { background: var(--rose-dim); }
+
+/* Bouton burger (mobile) */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.burger span {
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--texte);
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Le burger se transforme en croix quand le menu est ouvert */
+.burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ════════════════════════════════
+   PETITS TITRES DE SECTION
+════════════════════════════════ */
+.eyebrow,
+.hero-eyebrow,
+.section-eyebrow {
+  font-size: 11px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--rose-fonce);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.eyebrow::before,
+.hero-eyebrow::before,
+.section-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  background: var(--rose-dim);
+}
+
+/* ════════════════════════════════
+   VISUEL D'UNE FLEUR (remplace les emojis)
+════════════════════════════════ */
+.fleur-img {
+  width: 100%;
+  overflow: hidden;
+  background: var(--teinte, #f0e8e0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Cercle fin décoratif */
+.fleur-img::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 150px; height: 150px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px solid rgba(42,31,31,0.12);
+  transition: width 0.6s, height 0.6s;
+  pointer-events: none;
+}
+
+.fleur-card:hover .fleur-img::after { width: 175px; height: 175px; }
+
+/* Nom latin en grand, comme une planche botanique */
+.fleur-latin {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 34px;
+  font-weight: 300;
+  color: rgba(42,31,31,0.62);
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Si une vraie photo est ajoutée dans .fleur-img, elle recouvre le visuel */
+.fleur-img img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  z-index: 2;
+  transition: transform 0.6s, opacity 0.4s;
+}
+
+.fleur-badge {
+  position: absolute;
+  top: 14px; left: 14px;
+  background: var(--rose-fonce);
+  color: var(--blanc);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  z-index: 3;
+  line-height: 1.6;
+}
+
+.fleur-badge.vert { background: var(--vert); }
+
+/* ════════════════════════════════
+   COMPTEURS DE TIGES (− 5 +)
+════════════════════════════════ */
+.compteur-ctrl {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--sep);
+  background: var(--blanc);
+  width: fit-content;
+}
+
+.compteur-ctrl button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  font-family: var(--sans);
+  color: var(--muted);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.3s, color 0.3s;
+}
+
+.compteur-ctrl button:hover { background: var(--fond); color: var(--rose-fonce); }
+
+.compteur-val {
+  width: 48px;
+  height: 40px;
+  text-align: center;
+  border: none;
+  border-left: 1px solid var(--sep);
+  border-right: 1px solid var(--sep);
+  background: var(--blanc);
+  font-family: var(--serif);
+  font-size: 19px;
+  color: var(--texte);
+  -moz-appearance: textfield;
+}
+
+.compteur-val::-webkit-outer-spin-button,
+.compteur-val::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+
+/* ════════════════════════════════
+   CURSEUR « TAILLE DU BOUQUET »
+════════════════════════════════ */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 24px;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-runnable-track { height: 2px; background: rgba(201,123,138,0.35); }
+input[type="range"]::-moz-range-track { height: 2px; background: rgba(201,123,138,0.35); }
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px; height: 18px;
+  margin-top: -8px;
+  background: var(--rose-fonce);
+  border-radius: 50%;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 18px; height: 18px;
+  border: none;
+  background: var(--rose-fonce);
+  border-radius: 50%;
+}
+
+.taille-valeur {
+  display: block;
+  font-family: var(--serif);
+  font-size: 20px;
+  color: var(--texte);
+  margin: 6px 0 2px;
+}
+
+.taille-valeur em { font-style: italic; color: var(--rose-fonce); }
+
+/* ════════════════════════════════
+   PIED DE PAGE
+════════════════════════════════ */
+#site-footer {
+  background: var(--texte);
+  padding: 40px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-logo {
+  font-family: var(--serif);
+  font-size: 21px;
+  color: #d8cfcc;
+  letter-spacing: 3px;
+}
+
+.footer-logo em { font-style: italic; color: #d9a3ad; }
+
+.footer-copy {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #b9aeab;
+}
+
+.footer-links { display: flex; gap: 24px; list-style: none; }
+
+.footer-links a {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #b9aeab;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover { color: #d9a3ad; }
+
+/* Messages des formulaires (erreur / confirmation) */
+.form-message { font-size: 14px; line-height: 1.6; margin-top: 14px; }
+.form-message:empty { display: none; }
+.form-message.ok { color: var(--vert); }
+.form-message.err { color: #a3302f; }
+
+/* ════════════════════════════════
+   RESPONSIVE
+════════════════════════════════ */
+@media (max-width: 860px) {
+  .nav-cta { display: none; }
+  .burger { display: flex; }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 68px; left: 0; right: 0;
+    background: var(--blanc);
+    border-bottom: 1px solid var(--sep);
+    padding: 8px 5% 16px;
+    box-shadow: 0 12px 24px rgba(42,31,31,0.06);
+  }
+
+  .nav-links.ouvert { display: flex; }
+  .nav-links a { padding: 14px 0; }
+  .nav-links a.active::after { left: 0; right: auto; width: 40px; bottom: 8px; }
+
+  #site-footer { flex-direction: column; align-items: flex-start; gap: 20px; }
+  .footer-links { flex-wrap: wrap; gap: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
+}

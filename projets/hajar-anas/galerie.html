@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hajar &amp; Anas — Galerie</title>
+  <meta name="description" content="Toutes les fleurs de Hajar &amp; Anas : prix à la tige, filtres par type et disponibilité selon les saisons." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&amp;family=Jost:wght@200;300;400&amp;display=swap" />
+  <link rel="stylesheet" href="css/commun.css" />
+  <link rel="stylesheet" href="css/galerie.css" />
+</head>
+<body>
+
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<nav id="main-nav" aria-label="Navigation principale">
+  <a id="logo" href="index.html" aria-label="Hajar et Anas, accueil">
+    <span class="logo-nom">Hajar <em>&amp; Anas</em></span>
+    <span class="logo-sub">Bouquets sur mesure</span>
+  </a>
+  <ul class="nav-links" id="menu">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="galerie.html" class="active" aria-current="page">Fleurs</a></li>
+    <li><a href="formulaire.html">Commander</a></li>
+    <li><a href="index.html#pourquoi">À propos</a></li>
+  </ul>
+  <a href="formulaire.html" class="nav-cta">Mon bouquet</a>
+  <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<header id="hero">
+  <p class="eyebrow">Notre catalogue</p>
+  <h1>Toutes nos <em>fleurs</em></h1>
+  <p>Découvrez notre sélection de fleurs fraîches, choisies chaque matin
+     au marché. Ajoutez celles qui vous inspirent à votre bouquet.</p>
+</header>
+
+<main id="contenu">
+
+<!-- Les boutons filtrent les cartes grâce à leur attribut data-categories -->
+<div id="filtres" role="group" aria-label="Filtrer les fleurs">
+  <span class="filtre-label" aria-hidden="true">Filtrer :</span>
+  <button type="button" class="filtre-btn" data-filtre="toutes" aria-pressed="true">Toutes</button>
+  <button type="button" class="filtre-btn" data-filtre="roses" aria-pressed="false">Roses</button>
+  <button type="button" class="filtre-btn" data-filtre="printanieres" aria-pressed="false">Printanières</button>
+  <button type="button" class="filtre-btn" data-filtre="exotiques" aria-pressed="false">Exotiques</button>
+  <button type="button" class="filtre-btn" data-filtre="sauvages" aria-pressed="false">Sauvages</button>
+  <button type="button" class="filtre-btn" data-filtre="blanches" aria-pressed="false">Blanches</button>
+  <span class="filtre-compte" id="filtre-compte" aria-live="polite">9 fleurs</span>
+</div>
+
+<section id="galerie-section" aria-label="Catalogue des fleurs">
+  <div class="galerie-grid">
+
+    <article class="fleur-card large" data-categories="roses">
+      <div class="fleur-img teinte-rose">
+        <span class="fleur-badge">Vedette</span>
+        <span class="fleur-latin" aria-hidden="true">Rosa</span>
+      </div>
+      <div class="fleur-body">
+        <p class="fleur-famille">Rosacées</p>
+        <h2 class="fleur-nom">Rose <em>rouge</em></h2>
+        <p class="fleur-desc">La reine incontestée des bouquets. Veloutée,
+           intense et d'un rouge profond qui exprime l'amour et la passion.
+           Disponible toute l'année dans notre atelier.</p>
+        <div class="fleur-footer">
+          <span class="fleur-prix">2,50 € / tige</span>
+          <a href="formulaire.html?rose=1" class="fleur-cta">Ajouter <span class="sr-only">une rose rouge au bouquet</span> →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="fleur-card" data-categories="printanieres">
+      <div class="fleur-img teinte-tulipe">
+        <span class="fleur-badge">Saison</span>
+        <span class="fleur-latin" aria-hidden="true">Tulipa</span>
+      </div>
+      <div class="fleur-body">
+        <p class="fleur-famille">Liliacées</p>
+        <h2 class="fleur-nom">Tulipe</h2>
+        <p class="fleur-desc">Élégance printanière, disponible en rouge, jaune, blanc et mauve.</p>
+        <div class="fleur-footer">
+          <span class="fleur-prix">1,80 € / tige</span>
+          <a href="formulaire.html?tulipe=1" class="fleur-cta">Ajouter <span class="sr-only">une tulipe au bouquet</span> →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="fleur-card" data-categories="printanieres">
+      <div class="fleur-img teinte-pivoine">
+        <span class="fleur-badge vert">Bio</span>
+        <span class="fleur-latin" aria-hidden="true">Paeonia</span>
+      </div>
+      <div class="fleur-body">
+        <p class="fleur-famille">Paeoniacées</p>
+        <h2 class="fleur-nom">Pivoine</h2>
+        <p class="fleur-desc">Ronde, luxuriante, délicatement parfumée. Le summum du chic floral.</p>
+        <div class="fleur-footer">
+          <span class="fleur-prix">3,20 € / tige</span>
+          <a href="formulaire.html?pivoine=1" class="fleur-cta">Ajouter <span class="sr-only">une pivoine au bouquet</span> →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="fleur-card" data-categories="blanches">
+      <div class="fleur-img teinte-lys">
+        <span class="fleur-latin" aria-hidden="true">Lilium</span>
+      </div>
+      <div class="fleur-body">
+        <p class="fleur-famille">Liliacées</p>
+        <h2 class="fleur-nom">Lys blanc</h2>
+        <p class="fleur-desc">Pureté et prestige. Idéal pour mariages et occasions solennelles.</p>
+        <div class="fleur-footer">
+          <span class="fleur-prix">2,90 € / tige</span>
+          <a href="formulaire.html?lys=1" class="fleur-cta">Ajouter <span class="sr-only">un lys blanc au bouquet</span> →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="fleur-card" data-categories="sauvages">
+      <div class="fleur-img teinte-tournesol">
+        <span class="fleur-latin" aria-hidden="true">Helianthus</span>
+      </div>
+      <div class="fleur-body">
+        <p class="fleur-famille">Astéracées</p>
+        <h2 class="fleur-nom">Tournesol</h2>
+        <p class="fleur-desc">Joyeux et solaire. Apporte chaleur et bonne humeur dans tout bouquet.</p>
+        <div class="fleur-footer">
+          <span class="fleur-prix">1,60 € / tige</span>
+          <a href="formulaire.html?tournesol=1" class="fleur-cta">Ajouter <span class="sr-only">un tournesol au bouquet</span> →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="fleur-card" data-categories="exotiques blanches">
+      <div class="fleur-img teinte-orchidee">
+        <span class="fleur-badge">Rare</span>
+        <span class="fleur-latin" aria-hidden="true">Phalaenopsis</span>
+      </div>
+      <div class="fleur-body">
+        <p class="fleur-famille">Orchidacées</p>
+        <h2 class="fleur-nom">Orchidée</h2>
+        <p class="fleur-desc">Exotique et raffinée. La fleur la plus recherchée pour les bouquets de luxe.</p>
+        <div class="fleur-footer">
+          <span class="fleur-prix">4,50 € / tige</span>
+          <a href="formulaire.html?orchidee=1" class="fleur-cta">Ajouter <span class="sr-only">une orchidée au bouquet</span> →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="fleur-card" data-categories="sauvages blanches">
+      <div class="fleur-img teinte-marguerite">
+        <span class="fleur-latin" aria-hidden="true">Leucanthemum</span>
+      </div>
+      <div class="fleur-body">
+        <p class="fleur-famille">Astéracées</p>
+        <h2 class="fleur-nom">Marguerite</h2>
+        <p class="fleur-desc">Simple et poétique. Parfaite pour apporter légèreté à un bouquet champêtre.</p>
+        <div class="fleur-footer">
+          <span class="fleur-prix">1,20 € / tige</span>
+          <a href="formulaire.html?marguerite=1" class="fleur-cta">Ajouter <span class="sr-only">une marguerite au bouquet</span> →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="fleur-card" data-categories="exotiques">
+      <div class="fleur-img teinte-hibiscus">
+        <span class="fleur-latin" aria-hidden="true">Hibiscus</span>
+      </div>
+      <div class="fleur-body">
+        <p class="fleur-famille">Malvacées</p>
+        <h2 class="fleur-nom">Hibiscus</h2>
+        <p class="fleur-desc">Tropical et vibrant. Ses teintes profondes apportent une touche d'exotisme.</p>
+        <div class="fleur-footer">
+          <span class="fleur-prix">2,10 € / tige</span>
+          <a href="formulaire.html?hibiscus=1" class="fleur-cta">Ajouter <span class="sr-only">un hibiscus au bouquet</span> →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="fleur-card large pleine" data-categories="sauvages">
+      <div class="fleur-img teinte-feuillage">
+        <span class="fleur-badge vert">Nouveau</span>
+        <span class="fleur-latin" aria-hidden="true">Eucalyptus</span>
+      </div>
+      <div class="fleur-body">
+        <p class="fleur-famille">Verdure</p>
+        <h2 class="fleur-nom">Feuillage <em>décoratif</em></h2>
+        <p class="fleur-desc">Eucalyptus, fougère, gypsophile... Le feuillage donne volume
+           et profondeur à votre bouquet. À combiner avec n'importe quelle fleur
+           pour un rendu naturel et élégant.</p>
+        <div class="fleur-footer">
+          <span class="fleur-prix">0,80 € / tige</span>
+          <a href="formulaire.html?feuillage=1" class="fleur-cta">Ajouter <span class="sr-only">du feuillage au bouquet</span> →</a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+  <p class="galerie-vide" hidden>Aucune fleur dans cette catégorie pour le moment.</p>
+</section>
+
+<section id="saisons" aria-labelledby="titre-saisons">
+  <p class="eyebrow">Disponibilités</p>
+  <h2 id="titre-saisons">Fleurs de <em>saison</em></h2>
+
+  <div class="table-wrap">
+  <table id="table-saisons">
+    <caption>Disponibilité par saison — Hajar &amp; Anas</caption>
+    <thead>
+      <tr>
+        <th scope="col">Fleur</th>
+        <th scope="col">Printemps</th>
+        <th scope="col">Été</th>
+        <th scope="col">Automne</th>
+        <th scope="col">Hiver</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row" rowspan="2" class="cell-fleur">Rose</th>
+        <td class="cell-saison"><span class="dot-dispo"></span><span class="sr-only">Disponible</span></td>
+        <td class="cell-saison"><span class="dot-dispo"></span><span class="sr-only">Disponible</span></td>
+        <td class="cell-saison"><span class="dot-dispo"></span><span class="sr-only">Disponible</span></td>
+        <td class="cell-saison"><span class="dot-dispo"></span><span class="sr-only">Disponible</span></td>
+      </tr>
+      <tr>
+        <td colspan="4" class="cell-note">Disponible toute l'année</td>
+      </tr>
+      <tr>
+        <th scope="row" class="cell-fleur">Tulipe</th>
+        <td class="cell-saison"><span class="dot-dispo"></span><span class="sr-only">Disponible</span></td>
+        <td class="cell-saison"><span class="dot-non"></span><span class="sr-only">Indisponible</span></td>
+        <td class="cell-saison"><span class="dot-non"></span><span class="sr-only">Indisponible</span></td>
+        <td class="cell-saison"><span class="dot-dispo"></span><span class="sr-only">Disponible</span></td>
+      </tr>
+      <tr>
+        <th scope="row" class="cell-fleur">Pivoine</th>
+        <td class="cell-saison"><span class="dot-dispo"></span><span class="sr-only">Disponible</span></td>
+        <td class="cell-saison"><span class="dot-dispo"></span><span class="sr-only">Disponible</span></td>
+        <td class="cell-saison"><span class="dot-non"></span><span class="sr-only">Indisponible</span></td>
+        <td class="cell-saison"><span class="dot-non"></span><span class="sr-only">Indisponible</span></td>
+      </tr>
+      <tr>
+        <th scope="row" class="cell-fleur">Tournesol</th>
+        <td class="cell-saison"><span class="dot-non"></span><span class="sr-only">Indisponible</span></td>
+        <td class="cell-saison"><span class="dot-dispo"></span><span class="sr-only">Disponible</span></td>
+        <td class="cell-saison"><span class="dot-dispo"></span><span class="sr-only">Disponible</span></td>
+        <td class="cell-saison"><span class="dot-non"></span><span class="sr-only">Indisponible</span></td>
+      </tr>
+      <tr>
+        <th scope="row" class="cell-fleur">Orchidée</th>
+        <td class="cell-saison"><span class="dot-dispo"></span><span class="sr-only">Disponible</span></td>
+        <td class="cell-saison"><span class="dot-dispo"></span><span class="sr-only">Disponible</span></td>
+        <td class="cell-saison"><span class="dot-dispo"></span><span class="sr-only">Disponible</span></td>
+        <td class="cell-saison"><span class="dot-dispo"></span><span class="sr-only">Disponible</span></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="legende" aria-hidden="true">
+    <span><span class="dot-dispo"></span> Disponible</span>
+    <span><span class="dot-non"></span> Indisponible</span>
+  </p>
+</section>
+
+</main>
+
+<footer id="site-footer">
+  <span class="footer-logo">Hajar <em>&amp; Anas</em></span>
+  <ul class="footer-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="galerie.html">Fleurs</a></li>
+    <li><a href="formulaire.html">Commander</a></li>
+    <li><a href="formulaire.html#commande">Contact</a></li>
+  </ul>
+  <span class="footer-copy">© 2026 — Hajar &amp; Anas · Bruxelles</span>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
